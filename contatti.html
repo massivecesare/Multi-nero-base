@@ -1,93 +1,133 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contatti | BUBBLEBEE</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Stile specifico per il contenitore della mappa */
-    .map-container {
-      margin-top: 20px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: var(--shadow);
-      line-height: 0; /* Rimuove spazi bianchi sotto l'iframe */
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 400px;
-      border: 0;
-      filter: grayscale(0.5) invert(0.9) contrast(1.2); /* Effetto dark mode per la mappa */
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contatti e richieste di disponibilità – Bubblebee Luxury B&B Sant’Eusanio del Sangro"/>
+  <title>Contatti | Bubblebee Luxury B&B</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="header-inner shell">
+    <div class="shell header-inner">
       <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
+        <div class="brand-logo"><img src="https://picsum.photos/id/1015/200/80" alt="Bubblebee Logo"/></div>
+        <div>Bubblebee</div>
       </div>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="suite.html">Suite</a>
+        <a href="bubble.html">Bubble Rooms</a>
+        <a href="esperienze.html">Esperienze</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+
       <div class="nav-toggle">
-        <button class="hamburger" id="hamburger">☰</button>
+        <a href="contatti.html" class="cta-btn">Prenota ora</a>
+        <div id="openMenu" class="hamburger">☰</div>
       </div>
     </div>
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
   </header>
 
-  <main class="shell">
-    <section id="contatti">
-      <div class="section-label">Contatti</div>
-      <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
-      <p style="color:var(--muted); margin-bottom: 20px;">Siamo pronti ad accoglierti nella nostra tenuta.</p>
-      
-      <div class="card" style="padding: 30px; margin-bottom: 20px;">
-        <div style="margin-bottom:20px;">
-            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Email</div>
-            <div style="font-size:1.1rem;">info@bubblebee.it</div>
-        </div>
-        <div style="margin-bottom:20px;">
-            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Tel / WhatsApp</div>
-            <div style="font-size:1.1rem;">+39 000 000 0000</div>
-        </div>
-        <div>
-            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Indirizzo</div>
-            <div style="font-size:1.1rem;">Via Castella, 6 · 66037 Sant’Eusanio del Sangro (CH)</div>
-        </div>
-      </div>
+  <div id="navPanel" class="nav-panel">
+    <div style="padding:20px 24px 10px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:var(--accent);font-weight:700;">Menu</span>
+      <button id="closeMenu" style="background:none;border:none;font-size:32px;color:#fff;cursor:pointer;">×</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="suite.html">Suite</a>
+    <a href="bubble.html">Bubble Rooms</a>
+    <a href="esperienze.html">Esperienze</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
 
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956.1234567890!2d14.3312345!3d42.1623456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1330456184a460df%3A0x6968079a40e4c5d2!2sVia%20Castella%2C%206%2C%2066037%20Sant'Eusanio%20del%20Sangro%20CH!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+  <main>
+
+    <section class="hero shell" style="padding-top:40px; padding-bottom:20px;">
+      <div class="hero-content">
+        <div class="section-label">Siamo qui per te</div>
+        <h1>Contattaci <span class="accent">ora</span></h1>
+        <p>Rispondiamo entro 24 ore – anche via WhatsApp per urgenze.</p>
       </div>
     </section>
+
+    <section class="shell" style="max-width:860px; margin:0 auto 80px;">
+      <div style="display:grid; gap:48px; grid-template-columns:1fr; @media (min-width:768px){grid-template-columns:1fr 1fr;}">
+        
+        <div>
+          <h3 style="margin-bottom:16px;">Informazioni di contatto</h3>
+          <p style="margin:12px 0; color:var(--muted);">
+            <strong>Indirizzo:</strong><br>
+            Tenuta Bubblebee<br>
+            Contrada Colle Marconi<br>
+            66037 Sant’Eusanio del Sangro (CH)
+          </p>
+          <p style="margin:20px 0;">
+            <strong>Telefono / WhatsApp:</strong><br>
+            +39 333 123 4567
+          </p>
+          <p style="margin:20px 0;">
+            <strong>Email:</strong><br>
+            info@bubblebee.it
+          </p>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom:16px;">Orari reception</h3>
+          <p style="color:var(--muted);">
+            Check-in: 16:00 – 20:00<br>
+            Check-out: entro le 11:00<br><br>
+            Disponibili 24/7 per emergenze
+          </p>
+
+          <h3 style="margin:32px 0 16px;">Come raggiungerci</h3>
+          <p style="color:var(--muted);">
+            • Autostrada A25 – uscita Val di Sangro<br>
+            • Aeroporto più vicino: Pescara (55 min)<br>
+            • Stazione ferroviaria: Lanciano (20 min)
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="shell contact-panel" style="max-width:900px; margin:0 auto 80px; text-align:center;">
+      <h3>Hai già in mente le date?</h3>
+      <p style="margin:16px 0 32px;">Invia la tua richiesta e ti risponderemo al più presto con la migliore offerta.</p>
+      <a href="mailto:info@bubblebee.it?subject=Prenotazione%20Bubblebee" class="cta-btn">Invia email ora</a>
+      <p style="margin-top:24px; font-size:0.95rem; color:var(--muted);">
+        oppure scrivi su WhatsApp: +39 333 123 4567
+      </p>
+    </section>
+
   </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <strong>Bubblebee Luxury B&amp;B</strong><br>
+          Tenuta Bubblebee • Sant’Eusanio del Sangro (CH)
+        </div>
+        <div>
+          <a href="suite.html">Suite</a><br>
+          <a href="bubble.html">Bubble Rooms</a><br>
+          <a href="esperienze.html">Esperienze</a>
+        </div>
+        <div>
+          <a href="territorio.html">Il Territorio</a><br>
+          <a href="contatti.html">Contatti &amp; Prenotazioni</a>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.6;">© 2026 Bubblebee Luxury B&amp;B • Tutti i diritti riservati</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
