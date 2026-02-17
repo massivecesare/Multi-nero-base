@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BUBBLEBEE | Luxury B&B</title>
+  <meta name="description" content="Bubblebee Luxury B&B: retreat di charme tra colline di grano, Maiella e Costa dei Trabocchi.">
   <style>
     :root{
       --bg:#050505; --text:#f5f5f5; --muted:#b3b3b3; --accent:#d4a94f;
@@ -11,189 +12,349 @@
       --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%; width:100%; overflow-x:hidden;}
+    html,body{height:100%}
     body{
       font-family:var(--font);
-      background:#050505;
+      background:linear-gradient(180deg,#0b0b0b 0,#050505 100%);
       color:var(--text); -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
     a{color:inherit;text-decoration:none}
     .shell{max-width:var(--maxw);margin:0 auto;padding:14px}
-
-    /* HEADER */
     header{
-      position:sticky;top:0;z-index:100;
-      background:rgba(5,5,5,0.8);backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,0.05);
+      position:sticky;top:0;z-index:40;
+      background:rgba(5,5,5,0.6);backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.03);
     }
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 14px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-logo img{display:block; max-height:42px; width:auto; object-fit:contain;}
-    
-    .nav-toggle{display:flex;align-items:center;gap:12px}
-    .hamburger{
-      width:44px;height:44px;border-radius:12px;
-      background:var(--accent); color:#000;
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px}
+    /* BRAND: logo fully visible on mobile */
+    .brand{
+      display:flex;align-items:center;gap:10px;
+    }
+    .brand-logo{
       display:flex;align-items:center;justify-content:center;
-      cursor:pointer;font-size:22px;border:none;font-weight:bold;
+      background:transparent;border-radius:10px;padding:2px;
+      width:auto; height:48px; min-width:48px;
     }
+    .brand-logo img{
+      display:block; max-height:48px; width:auto; object-fit:contain;
+      max-width:160px;
+    }
+    .brand-text{display:none} /* keep header minimal on small screens */
+    /* NAV */
+    .nav-toggle{display:flex;align-items:center;gap:8px}
+    .hamburger{
+      width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;
+      cursor:pointer;font-size:18px;color:var(--muted)
+    }
+    .cta-row{display:flex;align-items:center;gap:8px}
     .btn-primary{
-      background:linear-gradient(135deg,#f7e3a8,#d4a94f);color:#1a1205;border:none;padding:10px 18px;border-radius:999px;font-weight:700;
-      cursor:pointer;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;
+      background:linear-gradient(135deg,#f7e3a8,#d4a94f);color:#1a1205;border:none;padding:8px 14px;border-radius:999px;font-weight:600;
+      box-shadow:var(--shadow);cursor:pointer;font-size:0.85rem;
     }
-
-    /* NUOVO MENU A GRIGLIA (Full Screen) */
+    /* MOBILE NAV PANEL – MIGLIORATA LEGGIBILITÀ SU SMARTPHONE */
     .nav-panel{
-      position:fixed; inset:0; z-index:1000;
-      background:rgba(5,5,5,0.98); backdrop-filter:blur(20px);
-      display:flex; flex-direction:column; justify-content:center;
-      opacity:0; pointer-events:none; transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      padding:20px;
+      position:fixed;inset:0;top:64px;left:0;right:0;bottom:0;
+      background:#050505; /* sfondo nero pieno per massimo contrasto */
+      transform:translateY(-6%);opacity:0;pointer-events:none;transition:all .28s ease;
+      padding:32px 24px;display:flex;flex-direction:column;gap:16px;
+      overflow-y:auto;
     }
-    .nav-panel.open{opacity:1; pointer-events:auto;}
-
-    .nav-grid {
-      display:grid; 
-      grid-template-columns: repeat(2, 1fr); /* 2 Colonne affiancate */
-      gap: 12px; 
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
+    .nav-panel.open{transform:none;opacity:1;pointer-events:auto}
+    .nav-panel a{
+      padding:20px 22px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.08); /* sfondo visibile ma elegante */
+      display:block;
+      color:#ffffff; /* bianco puro per massima leggibilità */
+      font-weight:700;
+      font-size:1.12rem; /* testo più grande */
+      letter-spacing:0.02em;
+      line-height:1.35;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
     }
-
-    .nav-panel a {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(212,169,79,0.2);
-      border-radius: 15px;
-      padding: 20px 10px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      aspect-ratio: 1 / 0.8; /* Rende i pulsanti quasi quadrati */
-      transition: all 0.2s ease;
+    .nav-panel a:hover{
+      background:rgba(212,169,79,0.18); /* tocco di accent color al tocco */
+      color:var(--accent);
     }
-
-    .nav-panel a:active {
-      background: var(--accent);
-      color: #000;
+    /* HERO + carousel */
+    .hero{display:grid;grid-template-columns:1fr;padding:18px 0;gap:18px;align-items:start}
+    .hero-left{padding-right:6px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:0.78rem;color:var(--muted)}
+    .hero-title{font-size:1.9rem;line-height:1.05;margin-top:10px;text-transform:uppercase}
+    .hero-title .accent{color:var(--accent)}
+    .hero-sub{color:var(--muted);margin-top:10px;font-size:0.95rem;line-height:1.6}
+    .hero-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    /* Carousel base */
+    .carousel{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);box-shadow:var(--shadow);height:56vw;max-height:420px;background:#111}
+    .carousel .slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .6s ease,transform .6s ease;opacity:0;transform:scale(1.02)}
+    .carousel .slide.active{opacity:1;transform:scale(1)}
+    .carousel .overlay{position:absolute;left:14px;top:14px;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,0.45);color:var(--muted);font-size:0.8rem}
+    .carousel .controls{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);border:1px solid rgba(0,0,0,0.2)}
+    .dot.active{background:var(--accent);box-shadow:0 6px 18px rgba(212,169,79,0.18)}
+    .carousel .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;color:var(--text);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .carousel .nav-btn.left{left:10px}
+    .carousel .nav-btn.right{right:10px}
+    /* Sections */
+    section{margin-top:28px}
+    .section-label{font-size:0.72rem;letter-spacing:0.16em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+    .section-title{font-size:1.3rem;text-transform:uppercase;margin-bottom:8px}
+    .cards-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .card{border-radius:14px;padding:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:999px;font-size:0.78rem;color:var(--muted)}
+    /* Footer */
+    footer{margin-top:26px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);font-size:0.82rem;color:var(--muted)}
+    /* Desktop tweaks */
+    @media(min-width:720px){
+      .brand-text{display:flex;flex-direction:column;line-height:1}
+      .brand-logo img{max-height:56px}
+      .hero{grid-template-columns:1fr 1fr;gap:22px}
+      .carousel{height:320px}
+      .cards-grid{grid-template-columns:repeat(2,1fr)}
+      /* menu desktop non cambia */
+      .nav-panel{padding:40px 30px}
+      .nav-panel a{font-size:1.15rem;padding:22px 26px}
     }
-
-    /* Pulsante Chiudi nel Menu */
-    .close-menu {
-      position: absolute; top: 20px; right: 20px;
-      width: 44px; height: 44px; border-radius: 50%;
-      background: rgba(255,255,255,0.1); color: var(--text);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; cursor: pointer; border: none;
-    }
-
-    /* HERO & CONTENT */
-    .hero{padding:20px 0; display:flex; flex-direction:column; gap:20px;}
-    .hero-title{font-size:2rem; line-height:1.1; text-transform:uppercase;}
-    .accent{color:var(--accent)}
-    .carousel{border-radius:20px; overflow:hidden; height:250px; position:relative; background:#111;}
-    .slide{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:0.6s;}
-    .slide.active{opacity:1;}
-    
-    .cards-grid{display:grid; grid-template-columns:1fr; gap:15px; margin-top:20px;}
-    .card{background:rgba(255,255,255,0.03); border-radius:15px; padding:15px; border:1px solid rgba(255,255,255,0.05);}
-    .card img{width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:10px;}
-
-    /* Desktop Adjustments */
-    @media(min-width:768px){
-      .nav-grid { grid-template-columns: repeat(4, 1fr); max-width: 800px; }
-      .hero{flex-direction:row; align-items:center;}
-      .hero-left, .carousel{flex:1;}
-      .cards-grid{grid-template-columns:1fr 1fr;}
+    @media(min-width:980px){
+      .shell{padding:28px}
+      .hero-title{font-size:2.6rem}
+      .carousel{height:420px}
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-inner shell">
       <div class="brand">
-        <div class="brand-logo"><img src="logo1.JPG" alt="Logo"></div>
+        <div class="brand-logo" aria-hidden="false">
+          <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
+        </div>
+        <div class="brand-text" aria-hidden="true">
+          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
+          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
+        </div>
       </div>
+
       <div class="nav-toggle">
-        <button class="btn-primary" onclick="scrollToSection('contatti')">Prenota</button>
-        <button class="hamburger" id="hamburger">☰</button>
+        <div class="cta-row">
+          <button class="btn-primary" onclick="scrollToSection('contatti')">Prenota</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Apri menu">☰</button>
       </div>
     </div>
 
-    <nav class="nav-panel" id="navPanel">
-      <button class="close-menu" id="closeMenu">&times;</button>
-      <div class="nav-grid">
-        <a href="#suite" onclick="toggleNav()">Suite</a>
-        <a href="#bubble" onclick="toggleNav()">Bubble</a>
-        <a href="#esperienze" onclick="toggleNav()">Esperienze</a>
-        <a href="#territorio" onclick="toggleNav()">Territorio</a>
-        <a href="#bottega" onclick="toggleNav()">Bottega</a>
-        <a href="#sala-eventi" onclick="toggleNav()">Eventi</a>
-        <a href="#contatti" onclick="toggleNav()" style="grid-column: span 2; aspect-ratio: auto; padding: 15px; background: rgba(212,169,79,0.1);">Contatti</a>
-      </div>
+    <nav class="nav-panel" id="navPanel" aria-hidden="true">
+      <a href="#suite" onclick="toggleNav()">Suite</a>
+      <a href="#bubble" onclick="toggleNav()">Bubble Rooms</a>
+      <a href="#esperienze" onclick="toggleNav()">Esperienze</a>
+      <a href="#bottega" onclick="toggleNav()">Bottega</a>
+      <a href="#territorio" onclick="toggleNav()">Territorio</a>
+      <a href="#sala-eventi" onclick="toggleNav()">Sala Eventi</a>
+      <a href="#contatti" onclick="toggleNav()">Contatti</a>
     </nav>
   </header>
 
   <main class="shell">
-    <section class="hero">
+    <!-- HERO con carousel -->
+    <section class="hero" id="top">
       <div class="hero-left">
-        <h1 class="hero-title">Rifugio di <span class="accent">lusso silenzioso</span></h1>
-        <p style="color:var(--muted); margin:15px 0;">Suite di design e Bubble Rooms sotto le stelle d'Abruzzo.</p>
-        <button class="btn-primary" onclick="scrollToSection('suite')">Scopri di più</button>
+        <div class="hero-badge">Luxury Retreat · Abruzzo</div>
+        <h1 class="hero-title"><span>Un rifugio di</span><br><span class="accent">lusso silenzioso</span><br>tra colline e stelle</h1>
+        <p class="hero-sub">Suite di design, Bubble Rooms sotto il cielo d’Abruzzo ed esperienze autentiche pensate per chi cerca tempo, spazio e bellezza.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('suite')">Scopri le suite</button>
+          <button class="btn-primary" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)" onclick="scrollToSection('territorio')">Vivi l'Abruzzo</button>
+        </div>
       </div>
-      <div class="carousel" id="heroCarousel">
-        <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');"></div>
-        <div class="slide" style="background-image:url('vista tenuta.jpeg');"></div>
+
+      <div>
+        <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
+          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');" role="group" aria-label="Slide 1"></div>
+          <div class="slide" style="background-image:url('vista tenuta.jpeg');" role="group" aria-label="Slide 2"></div>
+          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="group" aria-label="Slide 3"></div>
+
+          <div class="overlay">Bubblebee</div>
+
+          <button class="nav-btn left" aria-label="Previous" onclick="heroPrev()">‹</button>
+          <button class="nav-btn right" aria-label="Next" onclick="heroNext()">›</button>
+
+          <div class="controls" id="heroDots" aria-hidden="false">
+            <div class="dot active" data-index="0" onclick="heroGo(0)"></div>
+            <div class="dot" data-index="1" onclick="heroGo(1)"></div>
+            <div class="dot" data-index="2" onclick="heroGo(2)"></div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Suite -->
     <section id="suite">
-      <h2 style="text-transform:uppercase; margin-bottom:15px; font-size:1.2rem;">Le Suite</h2>
+      <div class="section-label">Le nostre camere</div>
+      <h2 class="section-title">Suite <span class="accent">di carattere</span></h2>
+      <p class="section-intro" style="color:var(--muted);margin-bottom:12px">Quattro suite ispirate agli elementi e al paesaggio che circonda Bubblebee.</p>
+
       <div class="cards-grid">
-        <div class="card">
-          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200">
-          <p><strong>Suite Aurea</strong></p>
-        </div>
-        <div class="card">
-          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200">
-          <p><strong>Suite Terra</strong></p>
-        </div>
+        <article class="card">
+          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aurea">
+          <div style="font-weight:700">Suite Aurea</div>
+          <div style="color:var(--muted);margin-top:6px">Ampia suite matrimoniale con grandi vetrate sui campi di grano.</div>
+          <div class="chips">
+            <div class="chip">Vista colline</div><div class="chip">Letto king</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Terra">
+          <div style="font-weight:700">Suite Terra</div>
+          <div style="color:var(--muted);margin-top:6px">Tessuti naturali e atmosfera raccolta.</div>
+          <div class="chips">
+            <div class="chip">Vista Maiella</div><div class="chip">Courtesy bar</div>
+          </div>
+        </article>
       </div>
     </section>
+
+    <!-- Bubble Rooms -->
+    <section id="bubble">
+      <div class="section-label">Dormire sotto le stelle</div>
+      <h2 class="section-title">Bubble <span class="accent">Rooms</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="bubbleroom1.jpg" alt="Bubble Vega">
+          <div style="font-weight:700">Bubble Vega</div>
+          <div style="color:var(--muted);margin-top:6px">Bolla panoramica per notti stellate.</div>
+        </article>
+        <article class="card">
+          <img src="bubbleroom2.jpg" alt="Bubble Sirius">
+          <div style="font-weight:700">Bubble Sirius</div>
+          <div style="color:var(--muted);margin-top:6px">Posizione ampia con vista mare-lontano.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Esperienze -->
+    <section id="esperienze">
+      <div class="section-label">Esperienze</div>
+      <h2 class="section-title">Vivere <span class="accent">Bubblebee</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="raccolta olive.jpeg" alt="Raccolta olive">
+          <div style="font-weight:700">Raccolta delle olive</div>
+          <div style="color:var(--muted);margin-top:6px">Giornata tra gli ulivi e degustazione dell'olio nuovo.</div>
+        </article>
+        <article class="card">
+          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga al tramonto">
+          <div style="font-weight:700">Yoga al tramonto</div>
+          <div style="color:var(--muted);margin-top:6px">Pratica dolce tra i campi alla golden hour.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Territorio -->
+    <section id="territorio">
+      <div class="section-label">Il territorio</div>
+      <h2 class="section-title">A 30 minuti <span class="accent">dalla meraviglia</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
+          <div style="font-weight:700">Costa dei Trabocchi</div>
+          <div style="color:var(--muted);margin-top:6px">Antichi trabocchi e ristoranti sul mare.</div>
+        </article>
+        <article class="card">
+          <img src="gole san martino.webp" alt="Gole di San Martino">
+          <div style="font-weight:700">Gole di San Martino</div>
+          <div style="color:var(--muted);margin-top:6px">Sentieri e canyon alle porte della Maiella.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti">
+      <div class="section-label">Contatti</div>
+      <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
+      <div class="card">
+        <div style="color:var(--muted);margin-bottom:8px">Email: info@bubblebee.it · Tel/WhatsApp: +39 000 000 0000</div>
+        <div style="color:var(--muted)">Indirizzo: Tenuta Bubblebee · Sant’Eusanio del Sangro (CH)</div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
+        <div style="color:var(--muted)">© <span id="year"></span></div>
+      </div>
+    </footer>
   </main>
 
   <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // NAV toggle
     const hamburger = document.getElementById('hamburger');
-    const closeMenu = document.getElementById('closeMenu');
     const navPanel = document.getElementById('navPanel');
-
-    function toggleNav() {
-      navPanel.classList.toggle('open');
+    function toggleNav(){
+      const open = navPanel.classList.toggle('open');
+      navPanel.setAttribute('aria-hidden', !open);
     }
-
     hamburger.addEventListener('click', toggleNav);
-    closeMenu.addEventListener('click', toggleNav);
 
-    function scrollToSection(id) {
-      if(navPanel.classList.contains('open')) toggleNav();
+    // smooth scroll helper
+    function scrollToSection(id){
+      toggleNav(); // close nav on mobile
       const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth'});
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     }
 
-    // Carousel semplice
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 4000);
+    // HERO carousel logic
+    (function(){
+      const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
+      const dots = Array.from(document.querySelectorAll('#heroDots .dot'));
+      let idx = 0;
+      let autoplay = true;
+      let timer = null;
+      function show(i){
+        slides.forEach((s,si)=> s.classList.toggle('active', si===i));
+        dots.forEach((d,di)=> d.classList.toggle('active', di===i));
+        idx = i;
+      }
+      function next(){ show((idx+1) % slides.length) }
+      function prev(){ show((idx-1+slides.length) % slides.length) }
+      function startAuto(){ if(timer) clearInterval(timer); timer = setInterval(next, 4500) }
+      function stopAuto(){ if(timer) clearInterval(timer); timer = null }
+      window.heroNext = function(){ stopAuto(); next(); if(autoplay) startAuto() }
+      window.heroPrev = function(){ stopAuto(); prev(); if(autoplay) startAuto() }
+      window.heroGo = function(i){ stopAuto(); show(i); if(autoplay) startAuto() }
+      slides.forEach(s=> s.addEventListener('mouseenter', stopAuto));
+      slides.forEach(s=> s.addEventListener('mouseleave', startAuto));
+      startAuto();
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') heroNext();
+        if(e.key === 'ArrowLeft') heroPrev();
+      });
+    })();
+
+    // Logo fallback
+    (function(){
+      const logo = document.getElementById('site-logo');
+      function adjustLogo(){
+        if(!logo) return;
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        if(vw < 360){
+          logo.style.maxHeight = '40px';
+          logo.style.maxWidth = '120px';
+        } else {
+          logo.style.maxHeight = '';
+          logo.style.maxWidth = '';
+        }
+      }
+      window.addEventListener('resize', adjustLogo);
+      adjustLogo();
+    })();
   </script>
 </body>
 </html>
