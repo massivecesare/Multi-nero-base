@@ -1,69 +1,35 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Esperienze | BUBBLEBEE</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="header-inner shell">
-      <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
-      </div>
-      <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" id="hamburger">☰</button>
-      </div>
-    </div>
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
-  </header>
-
-  <main class="shell">
-    <section id="esperienze">
-      <div class="section-label">Esperienze</div>
-      <h2 class="section-title">Vivere <span class="accent">Bubblebee</span></h2>
-      <p style="color:var(--muted); margin-bottom: 20px;">Momenti autentici pensati per riconnettersi con la terra e con se stessi.</p>
-
-      <div class="cards-grid">
-        <article class="card">
-          <img src="raccolta olive.jpeg" alt="Raccolta olive">
-          <div style="font-weight:700; font-size:1.2rem;">Raccolta delle olive</div>
-          <div style="color:var(--muted); margin-top:6px">Giornata tra gli ulivi secolari e degustazione dell'olio nuovo.</div>
-          <div class="chips"><div class="chip">Stagionale</div><div class="chip">Degustazione</div></div>
+        <article class="card" style="border: 1px solid #00d2ff;">
+          <img src="costa dei trabocchi 2.webp" alt="Aperitivo sul mare">
+          <div style="font-weight:700; font-size:1.2rem;">Sunset sul Trabocco</div>
+          <div style="color:var(--muted); margin:8px 0; font-size:0.9rem; line-height:1.4;">
+            Un'esperienza esclusiva sospesi sull'acqua. Aperitivo al tramonto su un antico trabocco abruzzese, degustando bollicine locali e crudi di pesce freschissimo.
+          </div>
+          <div class="chips">
+            <div class="chip" style="background:#00d2ff; color:#000">Esclusivo</div>
+            <div class="chip">Costa dei Trabocchi</div>
+          </div>
         </article>
 
         <article class="card">
-          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga al tramonto">
-          <div style="font-weight:700; font-size:1.2rem;">Yoga al tramonto</div>
-          <div style="color:var(--muted); margin-top:6px">Pratica dolce tra i campi dorati durante la golden hour.</div>
-          <div class="chips"><div class="chip">Wellness</div><div class="chip">Outdoor</div></div>
+          <img src="https://images.pexels.com/photos/1005827/pexels-photo-1005827.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="E-bike mare">
+          <div style="font-weight:700; font-size:1.2rem;">Bike & Sea: La Via Verde</div>
+          <div style="color:var(--muted); margin:8px 0; font-size:0.9rem; line-height:1.4;">
+            Percorri la pista ciclabile più bella d'Italia. Un tour in e-bike che costeggia le calette più selvagge, con sosta bagno nelle riserve naturali.
+          </div>
+          <div class="chips">
+            <div class="chip">Active</div>
+            <div class="chip">Noleggio incluso</div>
+          </div>
         </article>
-      </div>
-    </section>
-  </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
-  </script>
-</body>
-</html>
+        <article class="card">
+          <img src="https://images.pexels.com/photos/1632361/pexels-photo-1632361.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Barca">
+          <div style="font-weight:700; font-size:1.2rem;">Escursione in Barca a Vela</div>
+          <div style="color:var(--muted); margin:8px 0; font-size:0.9rem; line-height:1.4;">
+            Vedi la costa da una prospettiva diversa. Giornata in barca a vela con skipper, snorkeling nelle acque limpide di Punta Aderci e pranzo a bordo.
+          </div>
+          <div class="chips">
+            <div class="chip">Full Day</div>
+            <div class="chip">Relax</div>
+          </div>
+        </article>
