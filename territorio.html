@@ -1,30 +1,91 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Territorio | Bubblebee</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Territorio | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="header-inner shell">
-      <div class="header-col-left"><img src="logo1.JPG" class="brand-img"></div>
-      <div class="header-col-center"><a href="index.html" class="btn-home-center">Home</a></div>
-      <div class="header-col-right"><button class="hamburger" id="openMenu"><span></span><span></span><span></span></button></div>
+      <a href="index.html" class="brand">
+        <img src="logo1.JPG" alt="Logo">
+        <div class="brand-text"><strong>Bubblebee</strong><span>LUXURY B&amp;B</span></div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="shell" style="padding: 40px 0;">
-    <h2 class="section-title">Capitolo 1: <span class="accent">Sant'Eusanio</span></h2>
-    <p style="color:var(--muted)">Sant'Eusanio del Sangro, borgo millenario e patria del poeta Cesare De Titta...</p>
-  </main>
-
   <nav class="nav-panel" id="navPanel">
-    <button class="close-btn" id="closeMenu">×</button>
+    <button class="close-btn" id="closeMenu">&times;</button>
     <a href="index.html">Home</a>
-    <a href="territorio.html">Territorio</a>
+    <a href="suite.html">Suite</a>
+    <a href="bubble.html">Bubble Rooms</a>
+    <a href="esperienze.html">Esperienze</a>
+    <a href="territorio.html" class="active">Territorio</a>
+    <a href="contatti.html">Contatti</a>
   </nav>
 
-  <script src="script.js"></script>
+  <main class="shell" style="padding-top: 60px;">
+    <div style="text-align: center; margin-bottom: 80px;">
+      <div class="section-label">Geografie dell'Anima</div>
+      <h1 class="section-title">Un viaggio tra <span class="accent">radici</span> e <span class="accent">orizzonti</span></h1>
+    </div>
+
+    <section class="chapter" style="padding: 0;">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sant'Eusanio">
+        </div>
+        <div class="chapter-content">
+          <span class="chapter-number">01. Il Cuore</span>
+          <h3>Sant’Eusanio del Sangro: Il Borgo delle Radici</h3>
+          <p>Tutto inizia qui, su questo colle che un tempo i latini chiamavano <em>Monte de li Fieri</em>. Sant’Eusanio non è solo la nostra casa, è un presidio di memoria che domina la Valle del Sangro. Passeggiando tra i suoi vicoli, si respira l'eredità di <strong>Cesare De Titta</strong>, il poeta che più di ogni altro ha saputo tradurre in versi la nobiltà di questa terra contadina.</p>
+          <div class="quote">"Sotto il cielo di Sant'Eusanio, il tempo non corre: osserva."</div>
+          <p>Dalle tracce del passaggio del Santo Martire nel III secolo ai palazzi signorili, il borgo è un invito al rallentamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" style="padding: 0;">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="gole san martino.webp" alt="Maiella">
+        </div>
+        <div class="chapter-content">
+          <span class="chapter-number">02. La Roccia</span>
+          <h3>La Montagna Madre: Il Gigante di Pietra</h3>
+          <p>Alzando lo sguardo dalle nostre vigne, la Maiella domina l'orizzonte. In soli venti minuti, il paesaggio collinare muta in pareti verticali e canyon profondi. Le <strong>Gole di San Martino</strong> sono la ferita sacra della montagna: un varco strettissimo che conduce verso eremi scavati nella roccia e sorgenti di acqua purissima.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" style="padding: 0;">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="costa dei trabocchi 2.webp" alt="Mare">
+        </div>
+        <div class="chapter-content">
+          <span class="chapter-number">03. Il Sale</span>
+          <h3>La Costa dei Trabocchi: Poesia sull'Acqua</h3>
+          <p>Verso est, la terra scivola dolcemente fino a incontrare l'Adriatico. I <strong>Trabocchi</strong>, definiti da D'Annunzio "ragni colossali", sono sentinelle di legno che sfidano le mareggiate. Percorrere la <em>Via Verde</em> in bicicletta significa attraversare la storia ferroviaria d'Abruzzo, a picco sul mare.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell" style="display:flex; justify-content:space-between; align-items:center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="font-weight:700">Bubblebee &middot; Luxury B&amp;B</div>
+    <div style="color:var(--muted)">&copy; <span class="year"></span></div>
+  </footer>
+
+  <script>
+    document.querySelector('.year').textContent = new Date().getFullYear();
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navPanel').classList.add('open'));
+    document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('navPanel').classList.remove('open'));
+  </script>
 </body>
 </html>
