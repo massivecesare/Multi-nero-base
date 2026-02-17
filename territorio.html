@@ -6,143 +6,39 @@
   <title>Territorio | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Design System per la narrazione */
-    .ter-hero { padding: 80px 0 40px; text-align: center; }
-    .chapter { margin-bottom: 100px; }
-    .chapter-grid { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: center; }
-    
-    .chapter-number { 
-      font-family: serif; font-style: italic; color: var(--accent); 
-      font-size: 1.2rem; display: block; margin-bottom: 10px; 
-    }
-    
-    .chapter-content h3 { 
-      font-size: 2rem; color: var(--text); margin-bottom: 20px; 
-      letter-spacing: -0.02em; line-height: 1.2;
-    }
-    
-    .chapter-content p { 
-      font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 20px; 
-    }
-
-    .chapter-image { 
-      position: relative; border-radius: var(--radius); overflow: hidden; 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-    .chapter-image img { width: 100%; display: block; transition: transform 0.7s ease; }
-    .chapter-image:hover img { transform: scale(1.05); }
-
-    .quote { 
-      border-left: 2px solid var(--accent); padding-left: 20px; 
-      margin: 30px 0; font-style: italic; color: var(--text); 
-    }
-
-    @media(min-width: 992px) {
-      .chapter-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
-      .chapter:nth-child(even) .chapter-image { order: 2; }
-    }
+    .back-home { position: absolute; left: 50%; transform: translateX(-50%); color: var(--accent); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; text-decoration: none; }
+    .hamburger { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--accent); color: var(--accent); padding: 8px 12px; border-radius: 8px; }
+    .chapter { margin-bottom: 80px; }
+    .chapter img { width: 100%; border-radius: 15px; filter: brightness(0.8); }
   </style>
 </head>
 <body>
   <header>
     <div class="header-inner shell">
-      <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
-      </div>
-      <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" id="hamburger">☰</button>
-      </div>
+      <div class="brand"><img src="logo1.JPG" alt="Logo" style="height:35px;"></div>
+      <a href="index.html" class="back-home">Torna alla Home</a>
+      <div class="nav-toggle"><button class="hamburger" id="hamburger">☰</button></div>
     </div>
     <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
+        <button id="closeMenu" style="position:absolute; top:20px; right:20px; background:none; border:none; color:var(--accent); font-size:2rem;">×</button>
+        <a href="territorio.html" class="active">Territorio</a>
     </nav>
   </header>
 
   <main class="shell">
-    <div class="ter-hero">
-      <div class="section-label">Geografie dell'Anima</div>
-      <h2 class="section-title">Un viaggio tra <span class="accent">radici</span> e <span class="accent">orizzonti</span></h2>
-    </div>
-
+    <h2 class="section-title" style="text-align:center; margin-top:40px;">Orizzonti <span class="accent">Abruzzesi</span></h2>
     <section class="chapter">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sant'Eusanio del Sangro">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">01. Il Cuore</span>
-          <h3>Sant’Eusanio del Sangro: Il Borgo delle Radici</h3>
-          <p>Tutto inizia qui, su questo colle che un tempo i latini chiamavano <em>Monte de li Fieri</em>. Sant’Eusanio non è solo la nostra casa, è un presidio di memoria che domina la Valle del Sangro. Passeggiando tra i suoi vicoli, si respira l'eredità di <strong>Cesare De Titta</strong>, il poeta che più di ogni altro ha saputo tradurre in versi la nobiltà di questa terra contadina.</p>
-          <div class="quote">
-            "Sotto il cielo di Sant'Eusanio, il tempo non corre: osserva."
-          </div>
-          <p>Dalle tracce del passaggio del Santo Martire nel III secolo ai palazzi signorili che ancora oggi raccontano di antiche stirpi, il borgo è un invito al rallentamento e alla scoperta dei dettagli silenziosi.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="gole san martino.webp" alt="Montagna Maiella">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">02. La Roccia</span>
-          <h3>La Montagna Madre: Il Gigante di Pietra</h3>
-          <p>Alzando lo sguardo dalle nostre vigne, la Maiella domina l'orizzonte. In soli venti minuti, il paesaggio collinare muta in pareti verticali e canyon profondi. Le <strong>Gole di San Martino</strong> sono la ferita sacra della montagna: un varco strettissimo che conduce verso eremi scavati nella roccia e sorgenti di acqua purissima.</p>
-          <p>È un territorio di contrasti, dove i pastifici storici di Fara San Martino utilizzano da secoli l'energia di queste acque per creare un'eccellenza mondiale, in un connubio perfetto tra natura e ingegno umano.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">03. Il Sale</span>
-          <h3>La Costa dei Trabocchi: Poesia sull'Acqua</h3>
-          <p>Verso est, la terra scivola dolcemente fino a incontrare l'Adriatico. Qui la costa si fa selvaggia e silenziosa. I <strong>Trabocchi</strong>, definiti da D'Annunzio "ragni colossali", sono sentinelle di legno che sfidano le mareggiate. La Riserva di Punta Aderci è l'ultimo baluardo di un mare incontaminato, dove le dune incontrano scogliere color oro.</p>
-          <p>Percorrere la <em>Via Verde</em> in bicicletta significa attraversare la storia ferroviaria d'Abruzzo, oggi trasformata in una delle ciclovie più panoramiche d'Europa.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="https://images.pexels.com/photos/1133503/pexels-photo-1133503.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Borghi e Castelli">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">04. Lo Spirito</span>
-          <h3>Oltre il Tempo: Castelli e Abbazie</h3>
-          <p>Il raggio di trenta minuti si chiude con lo stupore della storia. Dall'<strong>Abbazia di San Giovanni in Venere</strong>, che osserva il mare da un colle di ulivi, al <strong>Castello di Roccascalegna</strong>, che sembra fluttuare nel vuoto. Infine Lanciano, città di commerci e miracoli, dove il Medioevo è ancora vivo nelle pietre dei quartieri storici.</p>
-          <p>Ogni pietra, ogni sentiero e ogni scorcio è un pezzo del mosaico che rende Bubblebee un'esperienza che va oltre i confini della tenuta.</p>
-        </div>
-      </div>
+        <h3>01. Sant'Eusanio del Sangro</h3>
+        <p style="color:var(--muted)">Il borgo delle radici e del poeta Cesare De Titta...</p>
     </section>
   </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
     const hamburger = document.getElementById('hamburger');
     const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+    const closeMenu = document.getElementById('closeMenu');
+    hamburger.addEventListener('click', () => navPanel.classList.add('open'));
+    closeMenu.addEventListener('click', () => navPanel.classList.remove('open'));
   </script>
 </body>
 </html>
