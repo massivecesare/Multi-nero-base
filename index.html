@@ -1,4 +1,115 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BUBBLEBEE | Luxury B&B</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner shell">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="logo1.JPG" alt="Bubblebee Logo" id="site-logo">
+        </div>
+        <div class="brand-text">
+          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
+          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
+        </div>
+      </div>
+
+      <div class="nav-toggle">
+        <div class="cta-row">
+          <a href="contatti.html" class="btn-primary">Prenota</a>
+        </div>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+
+    <nav class="nav-panel" id="navPanel">
+      <a href="index.html">Home</a>
+      <a href="suite.html">Suite</a>
+      <a href="bubble.html">Bubble Rooms</a>
+      <a href="esperienze.html">Esperienze</a>
+      <a href="territorio.html">Territorio</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="hero-badge">Luxury Retreat · Abruzzo</div>
+        <h1 class="hero-title"><span>Un rifugio di</span><br><span class="accent">lusso silenzioso</span><br>tra colline e stelle</h1>
+        <p class="hero-sub">Suite di design, Bubble Rooms sotto il cielo d’Abruzzo ed esperienze autentiche pensate per chi cerca tempo, spazio e bellezza.</p>
+        <div class="hero-actions">
+          <a href="suite.html" class="btn-primary">Scopri le suite</a>
+          <a href="territorio.html" class="btn-primary" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)">Vivi l'Abruzzo</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="carousel" id="heroCarousel">
+          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');"></div>
+          <div class="slide" style="background-image:url('vista tenuta.jpeg');"></div>
+          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+
+          <div class="overlay">Bubblebee</div>
+
+          <button class="nav-btn left" onclick="heroPrev()">‹</button>
+          <button class="nav-btn right" onclick="heroNext()">›</button>
+
+          <div class="controls" id="heroDots">
+            <div class="dot active" onclick="heroGo(0)"></div>
+            <div class="dot" onclick="heroGo(1)"></div>
+            <div class="dot" onclick="heroGo(2)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
+      <div id="year"></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const navPanel = document.getElementById('navPanel');
+    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+
+    // HERO carousel logic
+    (function(){
+      const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
+      const dots = Array.from(document.querySelectorAll('#heroDots .dot'));
+      let idx = 0;
+      let timer = null;
+
+      function show(i){
+        slides.forEach((s,si)=> s.classList.toggle('active', si===i));
+        dots.forEach((d,di)=> d.classList.toggle('active', di===i));
+        idx = i;
+      }
+      function next(){ show((idx+1) % slides.length) }
+      function startAuto(){ stopAuto(); timer = setInterval(next, 4500) }
+      function stopAuto(){ if(timer) clearInterval(timer); }
+
+      window.heroNext = function(){ stopAuto(); next(); startAuto(); }
+      window.heroPrev = function(){ stopAuto(); show((idx-1+slides.length)%slides.length); startAuto(); }
+      window.heroGo = function(i){ stopAuto(); show(i); startAuto(); }
+      
+      startAuto();
+    })();
+  </script>
+</body>
+</html>
+
 <html lang="it">
 <head>
   <meta charset="utf-8" />
