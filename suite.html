@@ -3,93 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Le Suite | BUBBLEBEE</title>
+  <title>Suite | Bubblebee Luxury B&B</title>
+  <meta name="description" content="Le quattro suite esclusive di Bubblebee: design unico, materiali naturali e vista mozzafiato sull'Abruzzo.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="header-inner shell">
       <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
+        <div class="brand-logo">
+          <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
+        </div>
+        <div class="brand-text">
+          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
+          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
+        </div>
       </div>
       <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" id="hamburger">☰</button>
+        <div class="cta-row">
+          <a href="contatti.html" class="btn-primary">Prenota</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Apri menu">☰</button>
       </div>
     </div>
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
+
+    <nav class="nav-panel" id="navPanel" aria-hidden="true">
+      <div class="menu-header">
+        <span>Menu</span>
+        <button class="close-btn" onclick="toggleNav()" aria-label="Chiudi menu">×</button>
+      </div>
+      <a href="index.html" onclick="toggleNav()">Home</a>
+      <a href="suite.html" onclick="toggleNav()">Suite</a>
+      <a href="bubble-rooms.html" onclick="toggleNav()">Bubble Rooms</a>
+      <a href="esperienze.html" onclick="toggleNav()">Esperienze</a>
+      <a href="bottega.html" onclick="toggleNav()">Bottega</a>
+      <a href="territorio.html" onclick="toggleNav()">Territorio</a>
+      <a href="sala-eventi.html" onclick="toggleNav()">Sala Eventi</a>
+      <a href="contatti.html" onclick="toggleNav()">Contatti</a>
     </nav>
   </header>
 
   <main class="shell">
-    <section id="suite">
-      <div class="section-label">Luxury Experience</div>
-      <h2 class="section-title">Le nostre <span class="accent">quattro suite</span></h2>
-      <p style="color:var(--muted); margin-bottom: 24px;">Ambienti unici dove il design contemporaneo incontra la quiete della natura abruzzese.</p>
+    <section style="margin-top:60px">
+      <div class="section-label">Le nostre camere</div>
+      <h2 class="section-title" style="font-size:2.8rem;line-height:1.1">Le quattro <span class="accent">Suite</span><br>di Bubblebee</h2>
+      <p style="color:var(--muted);margin:25px 0 40px;max-width:720px;font-size:1.05rem">
+        Ogni suite è un rifugio unico, progettato con materiali naturali e ispirato al paesaggio abruzzese. 
+        Massima privacy, comfort di altissimo livello e vista impareggiabile.
+      </p>
 
-      <div class="cards-grid">
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+        
+        <!-- SUITE 1 -->
         <article class="card">
-          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aurea">
-          <div style="font-weight:700; font-size:1.2rem;">Suite Aurea</div>
-          <div style="color:var(--muted); margin-top:6px">Ispirata ai toni dell'oro e dei campi di grano al sole.</div>
-          <div class="chips">
-            <div class="chip">Vasca in camera</div>
-            <div class="chip">King Size</div>
+          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aurea" style="height:220px">
+          <div style="font-weight:700;margin-top:12px;font-size:1.25rem">Suite Aurea</div>
+          <div style="color:var(--muted);margin:8px 0 12px">La suite regina, immersa nella luce dorata dei campi di grano.</div>
+          <div style="color:var(--muted);line-height:1.5">
+            Letto king size, grandi vetrate panoramiche, bagno in marmo con vasca freestanding, 
+            terrazza privata e scrittoio con vista sulla Maiella.
+          </div>
+          <div class="chips" style="margin-top:16px">
+            <div class="chip">Vista colline infinite</div>
+            <div class="chip">Letto king</div>
+            <div class="chip">Terrazza privata</div>
           </div>
         </article>
 
+        <!-- SUITE 2 -->
         <article class="card">
-          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Terra">
-          <div style="font-weight:700; font-size:1.2rem;">Suite Terra</div>
-          <div style="color:var(--muted); margin-top:6px">Toni caldi, materiali naturali e affaccio diretto sul giardino.</div>
-          <div class="chips">
-            <div class="chip">Ingresso privato</div>
-            <div class="chip">Area Relax</div>
+          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Terra" style="height:220px">
+          <div style="font-weight:700;margin-top:12px;font-size:1.25rem">Suite Terra</div>
+          <div style="color:var(--muted);margin:8px 0 12px">Radici, calore e connessione con la terra abruzzese.</div>
+          <div style="color:var(--muted);line-height:1.5">
+            Pavimenti in legno antico, camino funzionante, tessuti in lino e cotone biologico, 
+            ampia cabina doccia e vista diretta sulla Maiella.
+          </div>
+          <div class="chips" style="margin-top:16px">
+            <div class="chip">Vista Maiella</div>
+            <div class="chip">Camino</div>
+            <div class="chip">Courtesy bar</div>
           </div>
         </article>
 
+        <!-- SUITE 3 -->
         <article class="card">
-          <img src="https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aria">
-          <div style="font-weight:700; font-size:1.2rem;">Suite Aria</div>
-          <div style="color:var(--muted); margin-top:6px">Luminosa e ariosa, con ampie vetrate verso la Maiella.</div>
-          <div class="chips">
-            <div class="chip">Vista Panoramica</div>
-            <div class="chip">Balcone</div>
+          <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Luna" style="height:220px">
+          <div style="font-weight:700;margin-top:12px;font-size:1.25rem">Suite Luna</div>
+          <div style="color:var(--muted);margin:8px 0 12px">Romantica e raccolta, perfetta per momenti di intimità.</div>
+          <div style="color:var(--muted);line-height:1.5">
+            Letto king con testiera in velluto, balcone privato con luci soffuse, 
+            bagno con doppio lavabo e vasca da bagno vista stelle.
+          </div>
+          <div class="chips" style="margin-top:16px">
+            <div class="chip">Balcone privato</div>
+            <div class="chip">Atmosfera romantica</div>
+            <div class="chip">Vasca vista stelle</div>
           </div>
         </article>
 
+        <!-- SUITE 4 -->
         <article class="card">
-          <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Fuoco">
-          <div style="font-weight:700; font-size:1.2rem;">Suite Fuoco</div>
-          <div style="color:var(--muted); margin-top:6px">Passione e carattere, con dettagli in legno bruciato e tessuti pregiati.</div>
-          <div class="chips">
-            <div class="chip">Camino design</div>
-            <div class="chip">Sensoriale</div>
+          <img src="https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Stella" style="height:220px">
+          <div style="font-weight:700;margin-top:12px;font-size:1.25rem">Suite Stella</div>
+          <div style="color:var(--muted);margin:8px 0 12px">Luce, aria e connessione con il cielo abruzzese.</div>
+          <div style="color:var(--muted);line-height:1.5">
+            Design contemporaneo con soffitto a vista, grandi finestre su tre lati, 
+            accesso diretto al giardino privato e angolo relax con chaise longue.
+          </div>
+          <div class="chips" style="margin-top:16px">
+            <div class="chip">Giardino privato</div>
+            <div class="chip">Soffitto a vista</div>
+            <div class="chip">Angolo lettura</div>
           </div>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
+  <footer>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
+      <div style="color:var(--muted)">© <span id="year"></span></div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
     const hamburger = document.getElementById('hamburger');
     const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+    function toggleNav(){ navPanel.classList.toggle('open'); }
+    hamburger.addEventListener('click', toggleNav);
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
