@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Territorio | BUBBLEBEE</title>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Territorio | Bubblebee</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .back-home { position: absolute; left: 50%; transform: translateX(-50%); color: var(--accent); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; text-decoration: none; }
-    .hamburger { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--accent); color: var(--accent); padding: 8px 12px; border-radius: 8px; }
-    .chapter { margin-bottom: 80px; }
-    .chapter img { width: 100%; border-radius: 15px; filter: brightness(0.8); }
-  </style>
 </head>
 <body>
   <header>
     <div class="header-inner shell">
-      <div class="brand"><img src="logo1.JPG" alt="Logo" style="height:35px;"></div>
-      <a href="index.html" class="back-home">Torna alla Home</a>
-      <div class="nav-toggle"><button class="hamburger" id="hamburger">☰</button></div>
+      <div class="header-col-left"><img src="logo1.JPG" class="brand-img"></div>
+      <div class="header-col-center"><a href="index.html" class="btn-home-center">Home</a></div>
+      <div class="header-col-right"><button class="hamburger" id="openMenu"><span></span><span></span><span></span></button></div>
     </div>
-    <nav class="nav-panel" id="navPanel">
-        <button id="closeMenu" style="position:absolute; top:20px; right:20px; background:none; border:none; color:var(--accent); font-size:2rem;">×</button>
-        <a href="territorio.html" class="active">Territorio</a>
-    </nav>
   </header>
 
-  <main class="shell">
-    <h2 class="section-title" style="text-align:center; margin-top:40px;">Orizzonti <span class="accent">Abruzzesi</span></h2>
-    <section class="chapter">
-        <h3>01. Sant'Eusanio del Sangro</h3>
-        <p style="color:var(--muted)">Il borgo delle radici e del poeta Cesare De Titta...</p>
-    </section>
+  <main class="shell" style="padding: 40px 0;">
+    <h2 class="section-title">Capitolo 1: <span class="accent">Sant'Eusanio</span></h2>
+    <p style="color:var(--muted)">Sant'Eusanio del Sangro, borgo millenario e patria del poeta Cesare De Titta...</p>
   </main>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    const closeMenu = document.getElementById('closeMenu');
-    hamburger.addEventListener('click', () => navPanel.classList.add('open'));
-    closeMenu.addEventListener('click', () => navPanel.classList.remove('open'));
-  </script>
+  <nav class="nav-panel" id="navPanel">
+    <button class="close-btn" id="closeMenu">×</button>
+    <a href="index.html">Home</a>
+    <a href="territorio.html">Territorio</a>
+  </nav>
+
+  <script src="script.js"></script>
 </body>
 </html>
