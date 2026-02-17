@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BUBBLEBEE | Luxury B&B</title>
   <meta name="description" content="Bubblebee Luxury B&B: retreat di charme tra colline di grano, Maiella e Costa dei Trabocchi.">
-  <link rel="stylesheet" href="style.css"> </head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
   <header>
     <div class="header-inner shell">
       <div class="brand">
-        <div class="brand-logo" aria-hidden="false">
+        <div class="brand-logo">
           <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
         </div>
-        <div class="brand-text" aria-hidden="true">
+        <div class="brand-text">
           <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
           <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
         </div>
@@ -27,7 +28,7 @@
       </div>
     </div>
 
-    <nav class="nav-panel" id="navPanel" aria-hidden="true">
+    <nav class="nav-panel" id="navPanel">
       <a href="index.html">Home</a>
       <a href="suite.html">Suite</a>
       <a href="bubble.html">Bubble Rooms</a>
@@ -50,27 +51,103 @@
       </div>
 
       <div>
-        <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
-          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');" role="group" aria-label="Slide 1"></div>
-          <div class="slide" style="background-image:url('vista tenuta.jpeg');" role="group" aria-label="Slide 2"></div>
-          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="group" aria-label="Slide 3"></div>
+        <div class="carousel" id="heroCarousel">
+          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');"></div>
+          <div class="slide" style="background-image:url('vista tenuta.jpeg');"></div>
+          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
           <div class="overlay">Bubblebee</div>
-          <button class="nav-btn left" aria-label="Previous" onclick="heroPrev()">‹</button>
-          <button class="nav-btn right" aria-label="Next" onclick="heroNext()">›</button>
-          <div class="controls" id="heroDots" aria-hidden="false">
-            <div class="dot active" data-index="0" onclick="heroGo(0)"></div>
-            <div class="dot" data-index="1" onclick="heroGo(1)"></div>
-            <div class="dot" data-index="2" onclick="heroGo(2)"></div>
+          <button class="nav-btn left" onclick="heroPrev()">‹</button>
+          <button class="nav-btn right" onclick="heroNext()">›</button>
+          <div class="controls" id="heroDots">
+            <div class="dot active" onclick="heroGo(0)"></div>
+            <div class="dot" onclick="heroGo(1)"></div>
+            <div class="dot" onclick="heroGo(2)"></div>
           </div>
         </div>
       </div>
     </section>
 
-    </main>
+    <section id="suite">
+      <div class="section-label">Le nostre camere</div>
+      <h2 class="section-title">Suite <span class="accent">di carattere</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aurea">
+          <div style="font-weight:700">Suite Aurea</div>
+          <div style="color:var(--muted);margin-top:6px">Ampia suite matrimoniale con grandi vetrate sui campi di grano.</div>
+        </article>
+        <article class="card">
+          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Terra">
+          <div style="font-weight:700">Suite Terra</div>
+          <div style="color:var(--muted);margin-top:6px">Tessuti naturali e atmosfera raccolta.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="bubble">
+      <div class="section-label">Dormire sotto le stelle</div>
+      <h2 class="section-title">Bubble <span class="accent">Rooms</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="bubbleroom1.jpg" alt="Bubble Vega">
+          <div style="font-weight:700">Bubble Vega</div>
+          <div style="color:var(--muted);margin-top:6px">Bolla panoramica per notti stellate.</div>
+        </article>
+        <article class="card">
+          <img src="bubbleroom2.jpg" alt="Bubble Sirius">
+          <div style="font-weight:700">Bubble Sirius</div>
+          <div style="color:var(--muted);margin-top:6px">Posizione ampia con vista mare-lontano.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="esperienze">
+      <div class="section-label">Esperienze</div>
+      <h2 class="section-title">Vivere <span class="accent">Bubblebee</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="raccolta olive.jpeg" alt="Raccolta olive">
+          <div style="font-weight:700">Raccolta delle olive</div>
+          <div style="color:var(--muted);margin-top:6px">Giornata tra gli ulivi e degustazione dell'olio nuovo.</div>
+        </article>
+        <article class="card">
+          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga al tramonto">
+          <div style="font-weight:700">Yoga al tramonto</div>
+          <div style="color:var(--muted);margin-top:6px">Pratica dolce tra i campi alla golden hour.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="territorio">
+      <div class="section-label">Il territorio</div>
+      <h2 class="section-title">A 30 minuti <span class="accent">dalla meraviglia</span></h2>
+      <div class="cards-grid">
+        <article class="card">
+          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
+          <div style="font-weight:700">Costa dei Trabocchi</div>
+          <div style="color:var(--muted);margin-top:6px">Antichi trabocchi e ristoranti sul mare.</div>
+        </article>
+        <article class="card">
+          <img src="gole san martino.webp" alt="Gole di San Martino">
+          <div style="font-weight:700">Gole di San Martino</div>
+          <div style="color:var(--muted);margin-top:6px">Sentieri e canyon alle porte della Maiella.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="section-label">Contatti</div>
+      <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
+      <div class="card">
+        <div style="color:var(--muted);margin-bottom:8px">Email: info@bubblebee.it · Tel/WhatsApp: +39 000 000 0000</div>
+        <div style="color:var(--muted)">Indirizzo: Tenuta Bubblebee · Sant’Eusanio del Sangro (CH)</div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="shell" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
+    <div class="shell" style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
       <div style="color:var(--muted)">© <span id="year"></span></div>
     </div>
   </footer>
@@ -79,8 +156,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     const hamburger = document.getElementById('hamburger');
     const navPanel = document.getElementById('navPanel');
-    function toggleNav(){ navPanel.classList.toggle('open'); }
-    hamburger.addEventListener('click', toggleNav);
+    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
 
     (function(){
       const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
