@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bubble Rooms | BUBBLEBEE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner shell">
+      <div class="brand">
+        <a href="index.html" class="brand-logo">
+          <img src="logo1.JPG" alt="Bubblebee Logo">
+        </a>
+        <div class="brand-text">
+          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
+          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&B</span>
+        </div>
+      </div>
+
+      <div class="nav-toggle">
+        <a href="contatti.html" class="btn-primary">Prenota</a>
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+
+    <nav class="nav-panel" id="navPanel">
+      <a href="index.html">Home</a>
+      <a href="suite.html">Suite</a>
+      <a href="bubble.html">Bubble Rooms</a>
+      <a href="esperienze.html">Esperienze</a>
+      <a href="territorio.html">Territorio</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section id="bubble">
+      <div class="section-label">Dormire sotto le stelle</div>
+      <h2 class="section-title">Bubble <span class="accent">Rooms</span></h2>
+      <p style="color:var(--muted); margin-bottom: 20px;">Un'esperienza immersiva nella natura abruzzese, senza rinunciare al comfort di una suite di lusso.</p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <img src="bubbleroom1.jpg" alt="Bubble Vega">
+          <div style="font-weight:700; font-size: 1.2rem;">Bubble Vega</div>
+          <div style="color:var(--muted); margin-top:6px">Bolla panoramica per notti stellate indimenticabili.</div>
+          <div class="chips">
+            <div class="chip">Vista 360°</div>
+            <div class="chip">Privacy Totale</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="bubbleroom2.jpg" alt="Bubble Sirius">
+          <div style="font-weight:700; font-size: 1.2rem;">Bubble Sirius</div>
+          <div style="color:var(--muted); margin-top:6px">Posizione dominante con vista che spazia fino al mare.</div>
+          <div class="chips">
+            <div class="chip">Telescopio</div>
+            <div class="chip">Aria Condizionata</div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
+      <div id="year"></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamburger = document.getElementById('hamburger');
+    const navPanel = document.getElementById('navPanel');
+    
+    hamburger.addEventListener('click', () => {
+      navPanel.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
