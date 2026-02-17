@@ -1,91 +1,116 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Territorio | BUBBLEBEE</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sant’Eusanio del Sangro, Maiella, borghi medievali, parchi naturali – il cuore verde d’Abruzzo"/>
+  <title>Territorio | Bubblebee Luxury B&B</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="header-inner shell">
-      <a href="index.html" class="brand">
-        <img src="logo1.JPG" alt="Logo">
-        <div class="brand-text"><strong>Bubblebee</strong><span>LUXURY B&amp;B</span></div>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-logo"><img src="https://picsum.photos/id/1015/200/80" alt="Bubblebee Logo"/></div>
+        <div>Bubblebee</div>
+      </div>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="suite.html">Suite</a>
+        <a href="bubble.html">Bubble Rooms</a>
+        <a href="esperienze.html">Esperienze</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+
+      <div class="nav-toggle">
+        <a href="contatti.html" class="cta-btn">Prenota ora</a>
+        <div id="openMenu" class="hamburger">☰</div>
+      </div>
     </div>
   </header>
 
-  <nav class="nav-panel" id="navPanel">
-    <button class="close-btn" id="closeMenu">&times;</button>
+  <div id="navPanel" class="nav-panel">
+    <div style="padding:20px 24px 10px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:var(--accent);font-weight:700;">Menu</span>
+      <button id="closeMenu" style="background:none;border:none;font-size:32px;color:#fff;cursor:pointer;">×</button>
+    </div>
     <a href="index.html">Home</a>
     <a href="suite.html">Suite</a>
     <a href="bubble.html">Bubble Rooms</a>
     <a href="esperienze.html">Esperienze</a>
-    <a href="territorio.html" class="active">Territorio</a>
+    <a href="territorio.html">Territorio</a>
     <a href="contatti.html">Contatti</a>
-  </nav>
+  </div>
 
-  <main class="shell" style="padding-top: 60px;">
-    <div style="text-align: center; margin-bottom: 80px;">
-      <div class="section-label">Geografie dell'Anima</div>
-      <h1 class="section-title">Un viaggio tra <span class="accent">radici</span> e <span class="accent">orizzonti</span></h1>
-    </div>
+  <main>
 
-    <section class="chapter" style="padding: 0;">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sant'Eusanio">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">01. Il Cuore</span>
-          <h3>Sant’Eusanio del Sangro: Il Borgo delle Radici</h3>
-          <p>Tutto inizia qui, su questo colle che un tempo i latini chiamavano <em>Monte de li Fieri</em>. Sant’Eusanio non è solo la nostra casa, è un presidio di memoria che domina la Valle del Sangro. Passeggiando tra i suoi vicoli, si respira l'eredità di <strong>Cesare De Titta</strong>, il poeta che più di ogni altro ha saputo tradurre in versi la nobiltà di questa terra contadina.</p>
-          <div class="quote">"Sotto il cielo di Sant'Eusanio, il tempo non corre: osserva."</div>
-          <p>Dalle tracce del passaggio del Santo Martire nel III secolo ai palazzi signorili, il borgo è un invito al rallentamento.</p>
-        </div>
+    <section class="hero shell" style="padding-top:40px; padding-bottom:20px;">
+      <div class="hero-content">
+        <div class="section-label">Dove siamo</div>
+        <h1>Cuore <span class="accent">d’Abruzzo</span></h1>
+        <p>Sant’Eusanio del Sangro – tra la Maiella e il mare, tra borghi silenziosi e natura incontaminata.</p>
       </div>
     </section>
 
-    <section class="chapter" style="padding: 0;">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="gole san martino.webp" alt="Maiella">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">02. La Roccia</span>
-          <h3>La Montagna Madre: Il Gigante di Pietra</h3>
-          <p>Alzando lo sguardo dalle nostre vigne, la Maiella domina l'orizzonte. In soli venti minuti, il paesaggio collinare muta in pareti verticali e canyon profondi. Le <strong>Gole di San Martino</strong> sono la ferita sacra della montagna: un varco strettissimo che conduce verso eremi scavati nella roccia e sorgenti di acqua purissima.</p>
-        </div>
+    <section class="shell section-alt" style="gap:48px;">
+      <div class="media">
+        <img src="https://picsum.photos/id/1036/1200/800" alt="Parco Nazionale della Maiella"/>
+      </div>
+      <div>
+        <h2 class="section-title">Parco Nazionale della Maiella</h2>
+        <p style="color:var(--muted);">
+          A pochi minuti da noi si entra nel selvaggio Parco Nazionale della Maiella: sentieri per tutti i livelli, fauna ricca (cervi, lupi, camosci), eremi millenari incastonati nella roccia.
+        </p>
       </div>
     </section>
 
-    <section class="chapter" style="padding: 0;">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="costa dei trabocchi 2.webp" alt="Mare">
-        </div>
-        <div class="chapter-content">
-          <span class="chapter-number">03. Il Sale</span>
-          <h3>La Costa dei Trabocchi: Poesia sull'Acqua</h3>
-          <p>Verso est, la terra scivola dolcemente fino a incontrare l'Adriatico. I <strong>Trabocchi</strong>, definiti da D'Annunzio "ragni colossali", sono sentinelle di legno che sfidano le mareggiate. Percorrere la <em>Via Verde</em> in bicicletta significa attraversare la storia ferroviaria d'Abruzzo, a picco sul mare.</p>
-        </div>
+    <section class="shell section-alt" style="gap:48px;">
+      <div>
+        <h2 class="section-title">Borghi medievali</h2>
+        <p style="color:var(--muted);">
+          Palena, Lettopalena, Guardiagrele, Casoli, Roccascalegna… borghi di pietra che sembrano fermi nel tempo, con piazze silenziose e viste mozzafiato.
+        </p>
+      </div>
+      <div class="media">
+        <img src="https://picsum.photos/id/1043/1200/800" alt="Castello Roccascalegna"/>
       </div>
     </section>
+
+    <section class="shell" style="text-align:center; margin:80px 0;">
+      <h2 class="section-title">A soli 45 minuti dal mare</h2>
+      <p style="max-width:720px; margin:0 auto 32px; color:var(--muted);">
+        Costa dei Trabocchi, San Vito Chietino, Vasto, Ortona… spiagge di ciottoli, mare cristallino e trabocchi romantici.
+      </p>
+      <a href="contatti.html" class="cta-btn">Pianifichiamo il tuo itinerario</a>
+    </section>
+
   </main>
 
-  <footer class="shell" style="display:flex; justify-content:space-between; align-items:center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05);">
-    <div style="font-weight:700">Bubblebee &middot; Luxury B&amp;B</div>
-    <div style="color:var(--muted)">&copy; <span class="year"></span></div>
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <strong>Bubblebee Luxury B&amp;B</strong><br>
+          Tenuta Bubblebee • Sant’Eusanio del Sangro (CH)
+        </div>
+        <div>
+          <a href="suite.html">Suite</a><br>
+          <a href="bubble.html">Bubble Rooms</a><br>
+          <a href="esperienze.html">Esperienze</a>
+        </div>
+        <div>
+          <a href="territorio.html">Il Territorio</a><br>
+          <a href="contatti.html">Contatti &amp; Prenotazioni</a>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.6;">© 2026 Bubblebee Luxury B&amp;B • Tutti i diritti riservati</p>
+    </div>
   </footer>
 
-  <script>
-    document.querySelector('.year').textContent = new Date().getFullYear();
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navPanel').classList.add('open'));
-    document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('navPanel').classList.remove('open'));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
