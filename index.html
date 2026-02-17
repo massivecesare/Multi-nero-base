@@ -1,191 +1,145 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BUBBLEBEE | Luxury B&B</title>
-  <meta name="description" content="Bubblebee Luxury B&B: retreat di charme tra colline di grano, Maiella e Costa dei Trabocchi.">
-  <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bubblebee Luxury B&B - Rifugio di lusso silenzioso tra colline abruzzesi e stelle.">
+  <title>Bubblebee | Luxury B&amp;B Abruzzo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- HEADER comune -->
   <header>
-    <div class="header-inner shell">
+    <div class="shell header-inner">
       <div class="brand">
-        <div class="brand-logo">
-          <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
-        </div>
-        <div class="brand-text">
-          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
-          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
-        </div>
+        <div class="brand-logo"><img src="https://picsum.photos/id/1015/200/80" alt="Bubblebee Logo"></div>
+        <div>Bubblebee</div>
       </div>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="suite.html">Suite</a>
+        <a href="bubble.html">Bubble Rooms</a>
+        <a href="esperienze.html">Esperienze</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+
       <div class="nav-toggle">
-        <div class="cta-row">
-          <a href="contatti.html" class="btn-primary">Prenota</a>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Apri menu">☰</button>
+        <a href="contatti.html" class="cta-btn">Prenota ora</a>
+        <div id="openMenu" class="hamburger">☰</div>
       </div>
     </div>
-
-    <nav class="nav-panel" id="navPanel" aria-hidden="true">
-      <div class="menu-header">
-        <span>Menu</span>
-        <button class="close-btn" onclick="toggleNav()" aria-label="Chiudi menu">×</button>
-      </div>
-      <a href="suite.html" onclick="toggleNav()">Suite</a>
-      <a href="bubble-rooms.html" onclick="toggleNav()">Bubble Rooms</a>
-      <a href="esperienze.html" onclick="toggleNav()">Esperienze</a>
-      <a href="bottega.html" onclick="toggleNav()">Bottega</a>
-      <a href="territorio.html" onclick="toggleNav()">Territorio</a>
-      <a href="sala-eventi.html" onclick="toggleNav()">Sala Eventi</a>
-      <a href="contatti.html" onclick="toggleNav()">Contatti</a>
-    </nav>
   </header>
 
-  <main class="shell">
-    <section class="hero" id="top">
-      <div class="hero-left">
-        <div class="hero-badge">Luxury Retreat · Abruzzo</div>
-        <h1 class="hero-title"><span>Un rifugio di</span><br><span class="accent">lusso silenzioso</span><br>tra colline e stelle</h1>
-        <p class="hero-sub">Suite di design, Bubble Rooms sotto il cielo d’Abruzzo ed esperienze autentiche pensate per chi cerca tempo, spazio e bellezza.</p>
+  <!-- Mobile Menu -->
+  <div id="navPanel" class="nav-panel">
+    <div style="padding:20px 24px 10px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:var(--accent);font-weight:700;">Menu</span>
+      <button id="closeMenu" style="background:none;border:none;font-size:32px;color:#fff;cursor:pointer;">×</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="suite.html">Suite</a>
+    <a href="bubble.html">Bubble Rooms</a>
+    <a href="esperienze.html">Esperienze</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero shell">
+      <div class="hero-content">
+        <div class="hero-badge">Abruzzo • Sant’Eusanio del Sangro</div>
+        <h1>Un rifugio di <span class="accent">lusso silenzioso</span><br>tra colline e stelle</h1>
+        <p>Suite di design, Bubble Rooms sotto il cielo d’Abruzzo ed esperienze autentiche per chi cerca tempo, spazio e bellezza.</p>
         <div class="hero-actions">
-          <a href="suite.html" class="btn-primary">Scopri le suite</a>
-          <a href="territorio.html" class="btn-primary" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)">Vivi l'Abruzzo</a>
+          <a href="suite.html" class="cta-btn">Scopri le Suite</a>
+          <a href="bubble.html" class="cta-btn" style="background:transparent;border:2px solid var(--accent);color:var(--accent);">Bubble Rooms</a>
         </div>
       </div>
-      <div>
-        <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
-          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');" role="group" aria-label="Slide 1"></div>
-          <div class="slide" style="background-image:url('vista tenuta.jpeg');" role="group" aria-label="Slide 2"></div>
-          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="group" aria-label="Slide 3"></div>
-          <div class="overlay">Bubblebee</div>
-          <button class="nav-btn left" aria-label="Previous" onclick="heroPrev()">‹</button>
-          <button class="nav-btn right" aria-label="Next" onclick="heroNext()">›</button>
-          <div class="controls" id="heroDots" aria-hidden="false">
-            <div class="dot active" data-index="0" onclick="heroGo(0)"></div>
-            <div class="dot" data-index="1" onclick="heroGo(1)"></div>
-            <div class="dot" data-index="2" onclick="heroGo(2)"></div>
-          </div>
+
+      <div class="carousel">
+        <div class="slide active" style="background-image:url('https://picsum.photos/id/1015/1200/800')"></div>
+        <div class="slide" style="background-image:url('https://picsum.photos/id/133/1200/800')"></div>
+        <div class="slide" style="background-image:url('https://picsum.photos/id/201/1200/800')"></div>
+        <div class="overlay">Vista Maiella al tramonto</div>
+        <div class="controls">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
         </div>
       </div>
     </section>
 
-    <section id="suite">
+    <!-- CAMERE -->
+    <section class="shell">
       <div class="section-label">Le nostre camere</div>
-      <h2 class="section-title">Suite <span class="accent">di carattere</span></h2>
-      <p class="section-intro" style="color:var(--muted);margin-bottom:12px">Quattro suite ispirate agli elementi e al paesaggio che circonda Bubblebee.</p>
+      <h2 class="section-title">Eleganza e natura</h2>
       <div class="cards-grid">
-        <article class="card">
-          <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Aurea">
-          <div style="font-weight:700">Suite Aurea</div>
-          <div style="color:var(--muted);margin-top:6px">Ampia suite matrimoniale con grandi vetrate sui campi di grano.</div>
-          <div class="chips"><div class="chip">Vista colline</div><div class="chip">Letto king</div></div>
-        </article>
-        <article class="card">
-          <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Suite Terra">
-          <div style="font-weight:700">Suite Terra</div>
-          <div style="color:var(--muted);margin-top:6px">Tessuti naturali e atmosfera raccolta.</div>
-          <div class="chips"><div class="chip">Vista Maiella</div><div class="chip">Courtesy bar</div></div>
-        </article>
+        <a href="suite.html" class="card">
+          <img src="https://picsum.photos/id/1015/600/400" alt="Suite Aurea">
+          <div class="card-body">
+            <h3>Suite di carattere</h3>
+            <p>Quattro suite ispirate agli elementi abruzzesi</p>
+            <div class="chips"><span class="chip">King size</span><span class="chip">Vista Maiella</span></div>
+          </div>
+        </a>
+        <a href="bubble.html" class="card">
+          <img src="https://picsum.photos/id/133/600/400" alt="Bubble Rooms">
+          <div class="card-body">
+            <h3>Bubble Rooms</h3>
+            <p>Dormire sotto le stelle in bolle di lusso</p>
+            <div class="chips"><span class="chip">360°</span><span class="chip">Privacy totale</span></div>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section id="bubble">
-      <div class="section-label">Dormire sotto le stelle</div>
-      <h2 class="section-title">Bubble <span class="accent">Rooms</span></h2>
-      <div class="cards-grid">
-        <article class="card">
-          <img src="bubbleroom1.jpg" alt="Bubble Vega">
-          <div style="font-weight:700">Bubble Vega</div>
-          <div style="color:var(--muted);margin-top:6px">Bolla panoramica per notti stellate.</div>
-        </article>
-        <article class="card">
-          <img src="bubbleroom2.jpg" alt="Bubble Sirius">
-          <div style="font-weight:700">Bubble Sirius</div>
-          <div style="color:var(--muted);margin-top:6px">Posizione ampia con vista mare-lontano.</div>
-        </article>
+    <!-- ESPERIENZE & TERRITORIO teaser -->
+    <section class="shell section-alt">
+      <div>
+        <div class="section-label">Vivere Bubblebee</div>
+        <h2 class="section-title">Esperienze uniche</h2>
+        <p>Raccolta olive, yoga al tramonto, degustazioni private…</p>
+        <a href="esperienze.html" class="cta-btn" style="margin-top:20px;display:inline-block;">Scopri tutte le esperienze</a>
       </div>
+      <div class="media"><img src="https://picsum.photos/id/201/800/600" alt="Yoga al tramonto"></div>
     </section>
 
-    <section id="esperienze">
-      <div class="section-label">Esperienze</div>
-      <h2 class="section-title">Vivere <span class="accent">Bubblebee</span></h2>
-      <div class="cards-grid">
-        <article class="card">
-          <img src="raccolta olive.jpeg" alt="Raccolta olive">
-          <div style="font-weight:700">Raccolta delle olive</div>
-          <div style="color:var(--muted);margin-top:6px">Giornata tra gli ulivi e degustazione dell'olio nuovo.</div>
-        </article>
-        <article class="card">
-          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga al tramonto">
-          <div style="font-weight:700">Yoga al tramonto</div>
-          <div style="color:var(--muted);margin-top:6px">Pratica dolce tra i campi alla golden hour.</div>
-        </article>
+    <!-- CONTATTI PANEL -->
+    <div class="shell">
+      <div class="contact-panel">
+        <div>
+          <h3>Pronti ad accoglierti</h3>
+          <p>Email: info@bubblebee.it<br>Tel/WhatsApp: +39 000 000 0000</p>
+        </div>
+        <a href="contatti.html" class="cta-btn">Scrivici ora</a>
       </div>
-    </section>
-
-    <section id="territorio">
-      <div class="section-label">Il territorio</div>
-      <h2 class="section-title">A 30 minuti <span class="accent">dalla meraviglia</span></h2>
-      <div class="cards-grid">
-        <article class="card">
-          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
-          <div style="font-weight:700">Costa dei Trabocchi</div>
-          <div style="color:var(--muted);margin-top:6px">Antichi trabocchi e ristoranti sul mare.</div>
-        </article>
-        <article class="card">
-          <img src="gole san martino.webp" alt="Gole di San Martino">
-          <div style="font-weight:700">Gole di San Martino</div>
-          <div style="color:var(--muted);margin-top:6px">Sentieri e canyon alle porte della Maiella.</div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contatti">
-      <div class="section-label">Contatti</div>
-      <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
-      <div class="card">
-        <div style="color:var(--muted);margin-bottom:8px">Email: info@bubblebee.it · Tel/WhatsApp: +39 000 000 0000</div>
-        <div style="color:var(--muted)">Indirizzo: Tenuta Bubblebee · Sant’Eusanio del Sangro (CH)</div>
-      </div>
-    </section>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
-        <div style="color:var(--muted)">© <span id="year"></span></div>
-      </div>
-    </footer>
+    </div>
   </main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    function toggleNav(){ navPanel.classList.toggle('open'); }
-    hamburger.addEventListener('click', toggleNav);
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <strong>Bubblebee Luxury B&amp;B</strong><br>
+          Tenuta Bubblebee • Sant’Eusanio del Sangro (CH)
+        </div>
+        <div>
+          <a href="suite.html">Suite</a><br>
+          <a href="bubble.html">Bubble Rooms</a><br>
+          <a href="esperienze.html">Esperienze</a>
+        </div>
+        <div>
+          <a href="territorio.html">Il Territorio</a><br>
+          <a href="contatti.html">Contatti &amp; Prenotazioni</a>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.6;">© 2026 Bubblebee Luxury B&amp;B • Tutti i diritti riservati</p>
+    </div>
+  </footer>
 
-    (function(){
-      const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
-      const dots = Array.from(document.querySelectorAll('#heroDots .dot'));
-      let idx = 0;
-      let timer = null;
-      function show(i){ slides.forEach((s,si)=>s.classList.toggle('active',si===i)); dots.forEach((d,di)=>d.classList.toggle('active',di===i)); idx=i; }
-      function next(){ show((idx+1)%slides.length); }
-      function startAuto(){ if(timer) clearInterval(timer); timer=setInterval(next,4500); }
-      function stopAuto(){ if(timer) clearInterval(timer); }
-      window.heroNext=function(){stopAuto();next();startAuto();}
-      window.heroPrev=function(){stopAuto();show((idx-1+slides.length)%slides.length);startAuto();}
-      window.heroGo=function(i){stopAuto();show(i);startAuto();}
-      slides.forEach(s=>{s.addEventListener('mouseenter',stopAuto);s.addEventListener('mouseleave',startAuto);});
-      startAuto();
-    })();
-
-    (function(){
-      const logo = document.getElementById('site-logo');
-      function adjust(){ if(!logo) return; const vw=window.innerWidth; if(vw<360){logo.style.maxHeight='40px';logo.style.maxWidth='120px';}else{logo.style.maxHeight='';logo.style.maxWidth='';} }
-      window.addEventListener('resize',adjust); adjust();
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
