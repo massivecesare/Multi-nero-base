@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contatti | BUBBLEBEE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner shell">
+      <div class="brand">
+        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
+        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
+      </div>
+      <div class="nav-toggle">
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+    <nav class="nav-panel" id="navPanel">
+      <a href="index.html">Home</a>
+      <a href="suite.html">Suite</a>
+      <a href="bubble.html">Bubble Rooms</a>
+      <a href="esperienze.html">Esperienze</a>
+      <a href="territorio.html">Territorio</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section id="contatti">
+      <div class="section-label">Contatti</div>
+      <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
+      <p style="color:var(--muted); margin-bottom: 20px;">Siamo pronti ad accoglierti nella nostra tenuta.</p>
+      
+      <div class="card" style="padding: 30px;">
+        <div style="margin-bottom:20px;">
+            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Email</div>
+            <div style="font-size:1.1rem;">info@bubblebee.it</div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Tel / WhatsApp</div>
+            <div style="font-size:1.1rem;">+39 000 000 0000</div>
+        </div>
+        <div>
+            <div style="font-weight:700; color:var(--accent); margin-bottom:5px;">Indirizzo</div>
+            <div style="font-size:1.1rem;">Tenuta Bubblebee · Sant’Eusanio del Sangro (CH)</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
+      <div id="year"></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamburger = document.getElementById('hamburger');
+    const navPanel = document.getElementById('navPanel');
+    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+  </script>
+</body>
+</html>
