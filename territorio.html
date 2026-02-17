@@ -3,28 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Il Territorio | BUBBLEBEE</title>
+  <title>Territorio | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .territorio-header { padding: 60px 0 40px; text-align: center; }
-    .location-section { margin-bottom: 80px; }
-    .location-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+    /* Design System per la narrazione */
+    .ter-hero { padding: 80px 0 40px; text-align: center; }
+    .chapter { margin-bottom: 100px; }
+    .chapter-grid { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: center; }
     
-    .location-image-wrap { position: relative; border-radius: var(--radius); overflow: hidden; }
-    .location-image-wrap img { width: 100%; display: block; filter: brightness(0.85); transition: transform 0.5s ease; }
-    .location-image-wrap:hover img { transform: scale(1.03); }
+    .chapter-number { 
+      font-family: serif; font-style: italic; color: var(--accent); 
+      font-size: 1.2rem; display: block; margin-bottom: 10px; 
+    }
+    
+    .chapter-content h3 { 
+      font-size: 2rem; color: var(--text); margin-bottom: 20px; 
+      letter-spacing: -0.02em; line-height: 1.2;
+    }
+    
+    .chapter-content p { 
+      font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 20px; 
+    }
 
-    .location-info h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
-    .location-info p { line-height: 1.8; color: var(--muted); margin-bottom: 20px; font-size: 1.05rem; }
-    .highlight-list { list-style: none; padding: 0; }
-    .highlight-list li { margin-bottom: 10px; padding-left: 20px; position: relative; color: var(--text); font-size: 0.9rem; }
-    .highlight-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+    .chapter-image { 
+      position: relative; border-radius: var(--radius); overflow: hidden; 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .chapter-image img { width: 100%; display: block; transition: transform 0.7s ease; }
+    .chapter-image:hover img { transform: scale(1.05); }
 
-    .distanza { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+    .quote { 
+      border-left: 2px solid var(--accent); padding-left: 20px; 
+      margin: 30px 0; font-style: italic; color: var(--text); 
+    }
 
     @media(min-width: 992px) {
-      .location-grid { grid-template-columns: 1fr 1.2fr; gap: 60px; }
-      .location-section:nth-child(even) .location-image-wrap { order: 2; }
+      .chapter-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+      .chapter:nth-child(even) .chapter-image { order: 2; }
     }
   </style>
 </head>
@@ -50,88 +65,67 @@
     </nav>
   </header>
 
-  <main class="shell"> 
-        <section class="location-section" style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: var(--radius); border: 1px solid rgba(212,169,79,0.1);">
-      <div class="location-grid">
-        <div class="location-info">
-          <span class="distanza">La nostra casa</span>
-          <h3>Sant’Eusanio del Sangro: <span class="accent">Storia e Memoria</span></h3>
-          <p>Adagiato su un colle che domina la riva sinistra del fiume Sangro, il nostro borgo affonda le radici in un passato millenario. Anticamente noto come <em>Monte de li Fieri</em>, deve il suo nome attuale al Santo Martire Eusanio, che secondo la tradizione passò in queste terre nel III secolo lasciando un segno indelebile nella spiritualità locale.</p>
-          
-          <p>Sant’Eusanio è un intreccio di storie contadine e nobiliari, testimoniate dai palazzi signorili del centro storico e dalla maestosa Chiesa di Santa Maria Assunta, vero cuore pulsante della comunità.</p>
-
-          <h4 style="color: var(--accent); margin: 20px 0 10px; font-size: 0.9rem; text-transform: uppercase;">Personaggi e Passaggi Illustri</h4>
-          <ul class="highlight-list">
-            <li><strong>Cesare De Titta:</strong> Il celebre poeta abruzzese ebbe legami profondi con queste terre, cantando la bellezza della Valle del Sangro e la nobiltà del lavoro agricolo.</li>
-            <li><strong>Tradizione Militare:</strong> Il borgo è fiero di aver dato i natali a figure di spicco che hanno servito il Paese con onore, mantenendo sempre vivo il legame con la terra d'origine.</li>
-            <li><strong>Il Passaggio dei Pellegrini:</strong> Sant'Eusanio è stato storicamente un punto di sosta cruciale lungo i tratturi della transumanza e i percorsi dei pellegrini diretti verso i santuari della Maiella.</li>
-          </ul>
-        </div>
-        <div class="location-image-wrap">
-          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Scscorcio Sant'Eusanio del Sangro">
-          <div style="padding: 15px; font-size: 0.8rem; color: var(--muted); font-style: italic;">
-            Il centro storico conserva ancora l'impianto medievale e le atmosfere del "buon tempo antico".
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="territorio-header">
-      <div class="section-label">Orizzonti Abruzzesi</div>
-      <h2 class="section-title">Tra la <span class="accent">Maiella</span> e il <span class="accent">Mare</span></h2>
-      <p style="color:var(--muted); max-width:700px; margin: 20px auto;">Situata nel cuore di Sant'Eusanio del Sangro, la tenuta Bubblebee è il baricentro perfetto per esplorare le eccellenze d'Abruzzo: un viaggio che in meno di 30 minuti vi porta dalle vette appenniniche alla costa più selvaggia dell'Adriatico.</p>
+  <main class="shell">
+    <div class="ter-hero">
+      <div class="section-label">Geografie dell'Anima</div>
+      <h2 class="section-title">Un viaggio tra <span class="accent">radici</span> e <span class="accent">orizzonti</span></h2>
     </div>
 
-    <section class="location-section">
-      <div class="location-grid">
-        <div class="location-image-wrap">
-          <img src="https://images.pexels.com/photos/1133503/pexels-photo-1133503.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Maiella Abruzzo">
+    <section class="chapter">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sant'Eusanio del Sangro">
         </div>
-        <div class="location-info">
-          <span class="distanza">20 Minuti · Montagna</span>
-          <h3>La Montagna Madre</h3>
-          <p>La Maiella non è solo una catena montuosa, è lo spirito dell'Abruzzo. Da Sant'Eusanio, lo sguardo si poggia quotidianamente sulle sue cime imponenti. Le Gole di San Martino a Fara San Martino rappresentano una delle esperienze più scenografiche: una fenditura strettissima nella roccia che si apre su vallate incontaminate, dove il silenzio è interrotto solo dallo scorrere del Fiume Verde.</p>
-          <ul class="highlight-list">
-            <li><strong>Sorgenti del Verde:</strong> Acque purissime ideali per una sosta rigenerante dopo il trekking.</li>
-            <li><strong>Eremo di Santo Spirito:</strong> Un gioiello incastonato nella pietra, luogo di pace assoluta.</li>
-            <li><strong>Pasta di Fara:</strong> Visita ai pastifici storici famosi in tutto il mondo.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="location-section">
-      <div class="location-grid">
-        <div class="location-image-wrap">
-          <img src="https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Costa dei Trabocchi">
-        </div>
-        <div class="location-info">
-          <span class="distanza">25 Minuti · Mare</span>
-          <h3>L'Adriatico Selvaggio</h3>
-          <p>La Costa dei Trabocchi è un litorale unico al mondo, caratterizzato dalle antiche palafitte da pesca che sembrano "ragni colossali" sospesi sull'acqua. In soli 25 minuti potrete raggiungere la Riserva di Punta Aderci, dove le scogliere si tuffano in un mare cristallino che nulla ha da invidiare ai tropici. La "Via Verde", la nuova pista ciclabile ricavata dal vecchio tracciato ferroviario, offre chilometri di pura bellezza a picco sul mare.</p>
-          <ul class="highlight-list">
-            <li><strong>Cena sul Trabocco:</strong> Un'esperienza gastronomica gourmet sospesi sopra le onde.</li>
-            <li><strong>Punta Aderci:</strong> Il miglior punto per lo snorkeling e il birdwatching.</li>
-            <li><strong>Via Verde:</strong> Perfetta per un tour in E-bike al tramonto.</li>
-          </ul>
+        <div class="chapter-content">
+          <span class="chapter-number">01. Il Cuore</span>
+          <h3>Sant’Eusanio del Sangro: Il Borgo delle Radici</h3>
+          <p>Tutto inizia qui, su questo colle che un tempo i latini chiamavano <em>Monte de li Fieri</em>. Sant’Eusanio non è solo la nostra casa, è un presidio di memoria che domina la Valle del Sangro. Passeggiando tra i suoi vicoli, si respira l'eredità di <strong>Cesare De Titta</strong>, il poeta che più di ogni altro ha saputo tradurre in versi la nobiltà di questa terra contadina.</p>
+          <div class="quote">
+            "Sotto il cielo di Sant'Eusanio, il tempo non corre: osserva."
+          </div>
+          <p>Dalle tracce del passaggio del Santo Martire nel III secolo ai palazzi signorili che ancora oggi raccontano di antiche stirpi, il borgo è un invito al rallentamento e alla scoperta dei dettagli silenziosi.</p>
         </div>
       </div>
     </section>
 
-    <section class="location-section">
-      <div class="location-grid">
-        <div class="location-image-wrap">
-          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Borghi Abruzzesi">
+    <section class="chapter">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="gole san martino.webp" alt="Montagna Maiella">
         </div>
-        <div class="location-info">
-          <span class="distanza">15 Minuti · Storia</span>
-          <h3>Castelli e Abbazie</h3>
-          <p>Il nostro entroterra è costellato di meraviglie architettoniche. L'Abbazia di San Giovanni in Venere domina il golfo di Fossacesia offrendo una vista che toglie il fiato. Poco distante, il Castello di Roccascalegna svetta fiero su uno sperone di roccia, raccontando storie di cavalieri e leggende medievali. Lanciano, città d'arte e del Miracolo Eucaristico, vi accoglierà con le sue botteghe e i quartieri storici perfettamente conservati.</p>
-          <ul class="highlight-list">
-            <li><strong>Roccascalegna:</strong> Il castello più iconico e fotografato della regione.</li>
-            <li><strong>San Giovanni in Venere:</strong> Un chiostro romanico di rara bellezza tra gli ulivi.</li>
-            <li><strong>Lanciano:</strong> Shopping, storia e tradizioni millenarie.</li>
-          </ul>
+        <div class="chapter-content">
+          <span class="chapter-number">02. La Roccia</span>
+          <h3>La Montagna Madre: Il Gigante di Pietra</h3>
+          <p>Alzando lo sguardo dalle nostre vigne, la Maiella domina l'orizzonte. In soli venti minuti, il paesaggio collinare muta in pareti verticali e canyon profondi. Le <strong>Gole di San Martino</strong> sono la ferita sacra della montagna: un varco strettissimo che conduce verso eremi scavati nella roccia e sorgenti di acqua purissima.</p>
+          <p>È un territorio di contrasti, dove i pastifici storici di Fara San Martino utilizzano da secoli l'energia di queste acque per creare un'eccellenza mondiale, in un connubio perfetto tra natura e ingegno umano.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
+        </div>
+        <div class="chapter-content">
+          <span class="chapter-number">03. Il Sale</span>
+          <h3>La Costa dei Trabocchi: Poesia sull'Acqua</h3>
+          <p>Verso est, la terra scivola dolcemente fino a incontrare l'Adriatico. Qui la costa si fa selvaggia e silenziosa. I <strong>Trabocchi</strong>, definiti da D'Annunzio "ragni colossali", sono sentinelle di legno che sfidano le mareggiate. La Riserva di Punta Aderci è l'ultimo baluardo di un mare incontaminato, dove le dune incontrano scogliere color oro.</p>
+          <p>Percorrere la <em>Via Verde</em> in bicicletta significa attraversare la storia ferroviaria d'Abruzzo, oggi trasformata in una delle ciclovie più panoramiche d'Europa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="https://images.pexels.com/photos/1133503/pexels-photo-1133503.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Borghi e Castelli">
+        </div>
+        <div class="chapter-content">
+          <span class="chapter-number">04. Lo Spirito</span>
+          <h3>Oltre il Tempo: Castelli e Abbazie</h3>
+          <p>Il raggio di trenta minuti si chiude con lo stupore della storia. Dall'<strong>Abbazia di San Giovanni in Venere</strong>, che osserva il mare da un colle di ulivi, al <strong>Castello di Roccascalegna</strong>, che sembra fluttuare nel vuoto. Infine Lanciano, città di commerci e miracoli, dove il Medioevo è ancora vivo nelle pietre dei quartieri storici.</p>
+          <p>Ogni pietra, ogni sentiero e ogni scorcio è un pezzo del mosaico che rende Bubblebee un'esperienza che va oltre i confini della tenuta.</p>
         </div>
       </div>
     </section>
