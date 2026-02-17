@@ -1,85 +1,137 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bubble Rooms | BUBBLEBEE</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bubble Rooms – Dormire sotto le stelle in totale privacy e comfort di lusso"/>
+  <title>Bubble Rooms | Bubblebee Luxury B&B</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="header-inner shell">
+    <div class="shell header-inner">
       <div class="brand">
-        <a href="index.html" class="brand-logo">
-          <img src="logo1.JPG" alt="Bubblebee Logo">
-        </a>
-        <div class="brand-text">
-          <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
-          <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&B</span>
-        </div>
+        <div class="brand-logo"><img src="https://picsum.photos/id/1015/200/80" alt="Bubblebee Logo"/></div>
+        <div>Bubblebee</div>
       </div>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="suite.html">Suite</a>
+        <a href="bubble.html">Bubble Rooms</a>
+        <a href="esperienze.html">Esperienze</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
 
       <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" id="hamburger">☰</button>
+        <a href="contatti.html" class="cta-btn">Prenota ora</a>
+        <div id="openMenu" class="hamburger">☰</div>
       </div>
     </div>
-
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
   </header>
 
-  <main class="shell">
-    <section id="bubble">
-      <div class="section-label">Dormire sotto le stelle</div>
-      <h2 class="section-title">Bubble <span class="accent">Rooms</span></h2>
-      <p style="color:var(--muted); margin-bottom: 20px;">Un'esperienza immersiva nella natura abruzzese, senza rinunciare al comfort di una suite di lusso.</p>
+  <div id="navPanel" class="nav-panel">
+    <div style="padding:20px 24px 10px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:var(--accent);font-weight:700;">Menu</span>
+      <button id="closeMenu" style="background:none;border:none;font-size:32px;color:#fff;cursor:pointer;">×</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="suite.html">Suite</a>
+    <a href="bubble.html">Bubble Rooms</a>
+    <a href="esperienze.html">Esperienze</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+  </div>
 
-      <div class="cards-grid">
-        <article class="card">
-          <img src="bubbleroom1.jpg" alt="Bubble Vega">
-          <div style="font-weight:700; font-size: 1.2rem;">Bubble Vega</div>
-          <div style="color:var(--muted); margin-top:6px">Bolla panoramica per notti stellate indimenticabili.</div>
-          <div class="chips">
-            <div class="chip">Vista 360°</div>
-            <div class="chip">Privacy Totale</div>
-          </div>
-        </article>
+  <main>
 
-        <article class="card">
-          <img src="bubbleroom2.jpg" alt="Bubble Sirius">
-          <div style="font-weight:700; font-size: 1.2rem;">Bubble Sirius</div>
-          <div style="color:var(--muted); margin-top:6px">Posizione dominante con vista che spazia fino al mare.</div>
-          <div class="chips">
-            <div class="chip">Telescopio</div>
-            <div class="chip">Aria Condizionata</div>
-          </div>
-        </article>
+    <section class="hero shell" style="padding-top:40px; padding-bottom:20px;">
+      <div class="hero-content">
+        <div class="section-label">Dormire guardando le stelle</div>
+        <h1>Bubble <span class="accent">Rooms</span></h1>
+        <p>Esperienza esclusiva: bolle trasparenti di lusso immerse nella natura, privacy assoluta, comfort 5 stelle.</p>
       </div>
     </section>
+
+    <section class="shell">
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="https://picsum.photos/id/1018/800/600" alt="Bubble Classic"/>
+          <div class="card-body">
+            <h3>Bubble Classic</h3>
+            <p>Letto king-size, riscaldamento e aria condizionata, bagno privato esterno, terrazza in legno.</p>
+            <div class="chips">
+              <span class="chip">Ø 4,5 m</span>
+              <span class="chip">2 persone</span>
+              <span class="chip">Vista aperta</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/id/1020/800/600" alt="Bubble Deluxe"/>
+          <div class="card-body">
+            <h3>Bubble Deluxe</h3>
+            <p>Vasca idromassaggio esterna, doccia interna, minibar, illuminazione smart, telo mare incluso.</p>
+            <div class="chips">
+              <span class="chip">Ø 5 m</span>
+              <span class="chip">2+1 persone</span>
+              <span class="chip">Idromassaggio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/id/1033/800/600" alt="Bubble Family"/>
+          <div class="card-body">
+            <h3>Bubble Family</h3>
+            <p>Due letti queen + divano letto, ampia zona living interna, due bagni privati.</p>
+            <div class="chips">
+              <span class="chip">Ø 6 m</span>
+              <span class="chip">fino a 5 persone</span>
+              <span class="chip">Spazio extra</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="shell" style="text-align:center; margin:80px 0;">
+      <h2 class="section-title">Regole della casa nella bolla</h2>
+      <p style="max-width:720px; margin:0 auto 32px; color:var(--muted);">
+        Check-in dopo le 17:00 • Check-out entro le 11:00 • Vietato fumare • Animali non ammessi nelle Bubble • Silenzio dopo le 23:00
+      </p>
+      <a href="contatti.html" class="cta-btn">Verifica disponibilità Bubble</a>
+    </section>
+
   </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <strong>Bubblebee Luxury B&amp;B</strong><br>
+          Tenuta Bubblebee • Sant’Eusanio del Sangro (CH)
+        </div>
+        <div>
+          <a href="suite.html">Suite</a><br>
+          <a href="bubble.html">Bubble Rooms</a><br>
+          <a href="esperienze.html">Esperienze</a>
+        </div>
+        <div>
+          <a href="territorio.html">Il Territorio</a><br>
+          <a href="contatti.html">Contatti &amp; Prenotazioni</a>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.6;">© 2026 Bubblebee Luxury B&amp;B • Tutti i diritti riservati</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    
-    hamburger.addEventListener('click', () => {
-      navPanel.classList.toggle('open');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
