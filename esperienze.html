@@ -5,149 +5,72 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Esperienze | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Overwrite locale per un look più ricercato */
-    .exp-hero {
-      padding: 60px 0 30px;
-      text-align: center;
-    }
-    .exp-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .exp-item {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-items: center;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .exp-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: var(--radius);
-      filter: grayscale(0.2) contrast(1.1);
-    }
-    .exp-content h3 {
-      font-size: 1.6rem;
-      color: var(--accent);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .exp-content p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-    .exp-meta {
-      display: flex;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .exp-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      border: 1px solid rgba(212,169,79,0.3);
-      padding: 4px 12px;
-      border-radius: 999px;
-    }
-
-    @media(min-width: 768px) {
-      .exp-item { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .exp-item:nth-child(even) .exp-img { order: 2; }
-      .exp-content { padding: 0 20px; }
-    }
-  </style>
 </head>
 <body>
   <header>
     <div class="header-inner shell">
-      <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
-      </div>
-      <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" id="hamburger">☰</button>
-      </div>
+      <a href="index.html" class="brand">
+        <img src="logo1.JPG" alt="Logo">
+        <div class="brand-text"><strong>Bubblebee</strong><span>LUXURY B&amp;B</span></div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
   </header>
 
-  <main class="shell">
-    <div class="exp-hero">
-      <div class="section-label">Oltre il soggiorno</div>
-      <h2 class="section-title">Rituali e <span class="accent">Scoperte</span></h2>
-      <p style="max-width: 600px; margin: 20px auto; color: var(--muted);">Non offriamo solo un letto, ma un viaggio sensoriale tra le tradizioni e il benessere.</p>
+  <nav class="nav-panel" id="navPanel">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="suite.html">Suite</a>
+    <a href="bubble.html">Bubble Rooms</a>
+    <a href="esperienze.html" class="active">Esperienze</a>
+    <a href="territorio.html">Territorio</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+
+  <main class="shell" style="padding-top: 60px;">
+    <div style="text-align: center; margin-bottom: 80px;">
+      <div class="section-label">Oltre il Soggiorno</div>
+      <h1 class="section-title">Rituali e <span class="accent">Scoperte</span></h1>
     </div>
 
-    <div class="exp-grid">
-      
-      <article class="exp-item">
-        <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" class="exp-img" alt="Yoga">
-        <div class="exp-content">
-          <div class="exp-meta"><span class="exp-tag">Wellness</span><span class="exp-tag">In Tenuta</span></div>
+    <section class="chapter" style="padding: 0;">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga">
+        </div>
+        <div class="chapter-content">
+          <span class="section-label">Wellness</span>
           <h3>Yoga & Massaggi</h3>
           <p>Ritrova l'equilibrio interiore con sessioni di yoga al sorgere del sole tra i filari, seguite da massaggi olistici eseguiti con oli essenziali estratti dalle erbe della nostra terra.</p>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="exp-item">
-        <img src="raccolta olive.jpeg" class="exp-img" alt="Terra">
-        <div class="exp-content">
-          <div class="exp-meta"><span class="exp-tag">Tradizione</span><span class="exp-tag">Food</span></div>
+    <section class="chapter" style="padding: 0;">
+      <div class="chapter-grid">
+        <div class="chapter-image">
+          <img src="raccolta olive.jpeg" alt="Raccolta Olive">
+        </div>
+        <div class="chapter-content">
+          <span class="section-label">Tradizione</span>
           <h3>Dalla Terra alla Tavola</h3>
-          <p>Vivi la "Giornata del Contadino": partecipa alla raccolta delle olive o alla vendemmia. Concludi con una degustazione privata dei nostri prodotti locali, raccontati da chi li coltiva con passione.</p>
+          <p>Vivi la "Giornata del Contadino": partecipa alla raccolta delle olive o alla vendemmia. Concludi con una degustazione privata dei nostri prodotti locali.</p>
         </div>
-      </article>
-
-      <article class="exp-item">
-        <img src="costa dei trabocchi 2.webp" class="exp-img" alt="Mare">
-        <div class="exp-content">
-          <div class="exp-meta"><span class="exp-tag">Mare</span><span class="exp-tag">Exclusive</span></div>
-          <h3>L'Anima del Mare</h3>
-          <p>Un'immersione nella Costa dei Trabocchi. Dalla giornata col pescatore al tramonto privato su un trabocco storico, fino alle escursioni in e-bike sulla Via Verde lungo l'Adriatico.</p>
-        </div>
-      </article>
-
-      <article class="exp-item">
-        <img src="https://images.pexels.com/photos/1031698/pexels-photo-1031698.jpeg?auto=compress&cs=tinysrgb&w=1200" class="exp-img" alt="Montagna">
-        <div class="exp-content">
-          <div class="exp-meta"><span class="exp-tag">Trekking</span><span class="exp-tag">Adventure</span></div>
-          <h3>Vette Silenziose</h3>
-          <p>Esplora la Maiella con guide esperte. Trekking verso eremi millenari o camminate notturne sotto la luna piena per osservare le stelle da una prospettiva privilegiata.</p>
-        </div>
-      </article>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:700">Bubblebee · Luxury B&B</div>
-      <div id="year"></div>
-    </div>
+  <footer class="shell" style="display:flex; justify-content:space-between; align-items:center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="font-weight:700">Bubblebee &middot; Luxury B&amp;B</div>
+    <div style="color:var(--muted)">&copy; <span class="year"></span></div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger');
-    const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+    document.querySelector('.year').textContent = new Date().getFullYear();
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navPanel').classList.add('open'));
+    document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('navPanel').classList.remove('open'));
   </script>
 </body>
 </html>
