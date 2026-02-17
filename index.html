@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BUBBLEBEE | Luxury B&B</title>
+  <link rel="stylesheet" href="style.css"> </head>
+<body>
+  <header>
+    <div class="header-inner shell">
+      <div class="brand">
+        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
+        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
+      </div>
+      <div class="nav-toggle">
+        <a href="contatti.html" class="btn-primary">Prenota</a>
+        <button class="hamburger" onclick="toggleNav()">☰</button>
+      </div>
+    </div>
+    <nav class="nav-panel" id="navPanel">
+      <a href="index.html">Home</a>
+      <a href="suite.html">Suite</a>
+      <a href="bubble.html">Bubble Rooms</a>
+      <a href="esperienze.html">Esperienze</a>
+      <a href="territorio.html">Territorio</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+        <div class="hero-left">
+            <h1 class="section-title">Un rifugio di <span class="accent">lusso</span></h1>
+            <p>Suite di design e Bubble Rooms in Abruzzo.</p>
+        </div>
+        <div class="carousel">
+            <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg')"></div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>© 2026 Bubblebee Luxury B&B</p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navPanel').classList.toggle('open'); }
+  </script>
+</body>
+</html>
