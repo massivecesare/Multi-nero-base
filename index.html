@@ -1,19 +1,19 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BUBBLEBEE | Luxury B&B</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <meta name="description" content="Bubblebee Luxury B&B: retreat di charme tra colline di grano, Maiella e Costa dei Trabocchi.">
+  <link rel="stylesheet" href="style.css"> </head>
 <body>
   <header>
     <div class="header-inner shell">
       <div class="brand">
-        <div class="brand-logo">
-          <img src="logo1.JPG" alt="Bubblebee Logo" id="site-logo">
+        <div class="brand-logo" aria-hidden="false">
+          <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
         </div>
-        <div class="brand-text">
+        <div class="brand-text" aria-hidden="true">
           <span style="font-weight:700;letter-spacing:0.12em">Bubblebee</span>
           <span style="font-size:0.78rem;color:var(--muted);letter-spacing:0.18em">Luxury B&amp;B</span>
         </div>
@@ -23,11 +23,11 @@
         <div class="cta-row">
           <a href="contatti.html" class="btn-primary">Prenota</a>
         </div>
-        <button class="hamburger" id="hamburger">☰</button>
+        <button class="hamburger" id="hamburger" aria-label="Apri menu">☰</button>
       </div>
     </div>
 
-    <nav class="nav-panel" id="navPanel">
+    <nav class="nav-panel" id="navPanel" aria-hidden="true">
       <a href="index.html">Home</a>
       <a href="suite.html">Suite</a>
       <a href="bubble.html">Bubble Rooms</a>
@@ -50,47 +50,43 @@
       </div>
 
       <div>
-        <div class="carousel" id="heroCarousel">
-          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');"></div>
-          <div class="slide" style="background-image:url('vista tenuta.jpeg');"></div>
-          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
-
+        <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
+          <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');" role="group" aria-label="Slide 1"></div>
+          <div class="slide" style="background-image:url('vista tenuta.jpeg');" role="group" aria-label="Slide 2"></div>
+          <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="group" aria-label="Slide 3"></div>
           <div class="overlay">Bubblebee</div>
-
-          <button class="nav-btn left" onclick="heroPrev()">‹</button>
-          <button class="nav-btn right" onclick="heroNext()">›</button>
-
-          <div class="controls" id="heroDots">
-            <div class="dot active" onclick="heroGo(0)"></div>
-            <div class="dot" onclick="heroGo(1)"></div>
-            <div class="dot" onclick="heroGo(2)"></div>
+          <button class="nav-btn left" aria-label="Previous" onclick="heroPrev()">‹</button>
+          <button class="nav-btn right" aria-label="Next" onclick="heroNext()">›</button>
+          <div class="controls" id="heroDots" aria-hidden="false">
+            <div class="dot active" data-index="0" onclick="heroGo(0)"></div>
+            <div class="dot" data-index="1" onclick="heroGo(1)"></div>
+            <div class="dot" data-index="2" onclick="heroGo(2)"></div>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    </main>
+
+  <footer>
+    <div class="shell" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
       <div style="font-weight:700">Bubblebee · Luxury B&amp;B</div>
-      <div id="year"></div>
+      <div style="color:var(--muted)">© <span id="year"></span></div>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const hamburger = document.getElementById('hamburger');
     const navPanel = document.getElementById('navPanel');
-    hamburger.addEventListener('click', () => navPanel.classList.toggle('open'));
+    function toggleNav(){ navPanel.classList.toggle('open'); }
+    hamburger.addEventListener('click', toggleNav);
 
-    // HERO carousel logic
     (function(){
       const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
       const dots = Array.from(document.querySelectorAll('#heroDots .dot'));
       let idx = 0;
       let timer = null;
-
       function show(i){
         slides.forEach((s,si)=> s.classList.toggle('active', si===i));
         dots.forEach((d,di)=> d.classList.toggle('active', di===i));
@@ -99,63 +95,11 @@
       function next(){ show((idx+1) % slides.length) }
       function startAuto(){ stopAuto(); timer = setInterval(next, 4500) }
       function stopAuto(){ if(timer) clearInterval(timer); }
-
       window.heroNext = function(){ stopAuto(); next(); startAuto(); }
       window.heroPrev = function(){ stopAuto(); show((idx-1+slides.length)%slides.length); startAuto(); }
       window.heroGo = function(i){ stopAuto(); show(i); startAuto(); }
-      
       startAuto();
     })();
-  </script>
-</body>
-</html>
-
-<html lang="it">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BUBBLEBEE | Luxury B&B</title>
-  <link rel="stylesheet" href="style.css"> </head>
-<body>
-  <header>
-    <div class="header-inner shell">
-      <div class="brand">
-        <a href="index.html" class="brand-logo"><img src="logo1.JPG" alt="Logo"></a>
-        <div class="brand-text"><strong>Bubblebee</strong><span style="font-size:0.7rem">LUXURY B&B</span></div>
-      </div>
-      <div class="nav-toggle">
-        <a href="contatti.html" class="btn-primary">Prenota</a>
-        <button class="hamburger" onclick="toggleNav()">☰</button>
-      </div>
-    </div>
-    <nav class="nav-panel" id="navPanel">
-      <a href="index.html">Home</a>
-      <a href="suite.html">Suite</a>
-      <a href="bubble.html">Bubble Rooms</a>
-      <a href="esperienze.html">Esperienze</a>
-      <a href="territorio.html">Territorio</a>
-      <a href="contatti.html">Contatti</a>
-    </nav>
-  </header>
-
-  <main class="shell">
-    <section class="hero">
-        <div class="hero-left">
-            <h1 class="section-title">Un rifugio di <span class="accent">lusso</span></h1>
-            <p>Suite di design e Bubble Rooms in Abruzzo.</p>
-        </div>
-        <div class="carousel">
-            <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg')"></div>
-        </div>
-    </section>
-  </main>
-
-  <footer class="shell">
-    <p>© 2026 Bubblebee Luxury B&B</p>
-  </footer>
-
-  <script>
-    function toggleNav() { document.getElementById('navPanel').classList.toggle('open'); }
   </script>
 </body>
 </html>
