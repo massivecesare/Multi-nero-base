@@ -34,10 +34,12 @@
     .brand-logo{
       display:flex;align-items:center;justify-content:center;
       background:transparent;border-radius:10px;padding:2px;
+      /* allow logo to scale naturally */
       width:auto; height:48px; min-width:48px;
     }
     .brand-logo img{
       display:block; max-height:48px; width:auto; object-fit:contain;
+      /* ensure full logo visible even if wide */
       max-width:160px;
     }
     .brand-text{display:none} /* keep header minimal on small screens */
@@ -53,30 +55,29 @@
       background:linear-gradient(135deg,#f7e3a8,#d4a94f);color:#1a1205;border:none;padding:8px 14px;border-radius:999px;font-weight:600;
       box-shadow:var(--shadow);cursor:pointer;font-size:0.85rem;
     }
-    /* MOBILE NAV PANEL – MIGLIORATA LEGGIBILITÀ SU SMARTPHONE */
+    /* Mobile nav panel - MIGLIORATO */
     .nav-panel{
       position:fixed;inset:0;top:64px;left:0;right:0;bottom:0;
-      background:#050505; /* sfondo nero pieno per massimo contrasto */
+      background:linear-gradient(180deg,rgba(2,2,2,0.98),rgba(5,5,5,0.99));
       transform:translateY(-6%);opacity:0;pointer-events:none;transition:all .28s ease;
-      padding:32px 24px;display:flex;flex-direction:column;gap:16px;
-      overflow-y:auto;
+      padding:24px;display:flex;flex-direction:column;gap:16px;
     }
     .nav-panel.open{transform:none;opacity:1;pointer-events:auto}
     .nav-panel a{
-      padding:20px 22px;
-      border-radius:14px;
-      background:rgba(255,255,255,0.08); /* sfondo visibile ma elegante */
+      padding:16px 20px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
       display:block;
-      color:#ffffff; /* bianco puro per massima leggibilità */
-      font-weight:700;
-      font-size:1.12rem; /* testo più grande */
-      letter-spacing:0.02em;
-      line-height:1.35;
-      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      color:#f5f5f5;
+      font-weight:600;
+      font-size:1.05rem;
+      transition:all 0.2s ease;
+      text-align:center;
     }
-    .nav-panel a:hover{
-      background:rgba(212,169,79,0.18); /* tocco di accent color al tocco */
-      color:var(--accent);
+    .nav-panel a:active{
+      background:rgba(255,255,255,0.15);
+      transform:scale(0.98);
     }
     /* HERO + carousel */
     .hero{display:grid;grid-template-columns:1fr;padding:18px 0;gap:18px;align-items:start}
@@ -115,9 +116,6 @@
       .hero{grid-template-columns:1fr 1fr;gap:22px}
       .carousel{height:320px}
       .cards-grid{grid-template-columns:repeat(2,1fr)}
-      /* menu desktop non cambia */
-      .nav-panel{padding:40px 30px}
-      .nav-panel a{font-size:1.15rem;padding:22px 26px}
     }
     @media(min-width:980px){
       .shell{padding:28px}
@@ -131,6 +129,7 @@
     <div class="header-inner shell">
       <div class="brand">
         <div class="brand-logo" aria-hidden="false">
+          <!-- Sostituisci "logo-bubblebee.png" con il nome del file del tuo logo caricato nel repo -->
           <img src="logo1.JPG" alt="Bubblebee Luxury B&B logo" id="site-logo">
         </div>
         <div class="brand-text" aria-hidden="true">
@@ -164,7 +163,7 @@
       <div class="hero-left">
         <div class="hero-badge">Luxury Retreat · Abruzzo</div>
         <h1 class="hero-title"><span>Un rifugio di</span><br><span class="accent">lusso silenzioso</span><br>tra colline e stelle</h1>
-        <p class="hero-sub">Suite di design, Bubble Rooms sotto il cielo d’Abruzzo ed esperienze autentiche pensate per chi cerca tempo, spazio e bellezza.</p>
+        <p class="hero-sub">Suite di design, Bubble Rooms sotto il cielo d'Abruzzo ed esperienze autentiche pensate per chi cerca tempo, spazio e bellezza.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="scrollToSection('suite')">Scopri le suite</button>
           <button class="btn-primary" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)" onclick="scrollToSection('territorio')">Vivi l'Abruzzo</button>
@@ -173,6 +172,7 @@
 
       <div>
         <div class="carousel" id="heroCarousel" aria-roledescription="carousel">
+          <!-- Slide: sostituisci gli URL con le tue immagini ad alta qualità -->
           <div class="slide active" style="background-image:url('tenuta bubblebee.jpeg');" role="group" aria-label="Slide 1"></div>
           <div class="slide" style="background-image:url('vista tenuta.jpeg');" role="group" aria-label="Slide 2"></div>
           <div class="slide" style="background-image:url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600');" role="group" aria-label="Slide 3"></div>
@@ -191,7 +191,7 @@
       </div>
     </section>
 
-    <!-- Suite -->
+    <!-- Esempio di sezione con immagini/slide interne -->
     <section id="suite">
       <div class="section-label">Le nostre camere</div>
       <h2 class="section-title">Suite <span class="accent">di carattere</span></h2>
@@ -278,7 +278,7 @@
       <h2 class="section-title">Scrivici per <span class="accent">prenotare</span></h2>
       <div class="card">
         <div style="color:var(--muted);margin-bottom:8px">Email: info@bubblebee.it · Tel/WhatsApp: +39 000 000 0000</div>
-        <div style="color:var(--muted)">Indirizzo: Tenuta Bubblebee · Sant’Eusanio del Sangro (CH)</div>
+        <div style="color:var(--muted)">Indirizzo: Tenuta Bubblebee · Sant'Eusanio del Sangro (CH)</div>
       </div>
     </section>
 
@@ -310,7 +310,7 @@
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     }
 
-    // HERO carousel logic
+    // HERO carousel logic (lightweight, accessible)
     (function(){
       const slides = Array.from(document.querySelectorAll('#heroCarousel .slide'));
       const dots = Array.from(document.querySelectorAll('#heroDots .dot'));
@@ -326,19 +326,22 @@
       function prev(){ show((idx-1+slides.length) % slides.length) }
       function startAuto(){ if(timer) clearInterval(timer); timer = setInterval(next, 4500) }
       function stopAuto(){ if(timer) clearInterval(timer); timer = null }
+      // expose controls
       window.heroNext = function(){ stopAuto(); next(); if(autoplay) startAuto() }
       window.heroPrev = function(){ stopAuto(); prev(); if(autoplay) startAuto() }
       window.heroGo = function(i){ stopAuto(); show(i); if(autoplay) startAuto() }
+      // init
       slides.forEach(s=> s.addEventListener('mouseenter', stopAuto));
       slides.forEach(s=> s.addEventListener('mouseleave', startAuto));
       startAuto();
+      // keyboard accessibility
       document.addEventListener('keydown', (e)=>{
         if(e.key === 'ArrowRight') heroNext();
         if(e.key === 'ArrowLeft') heroPrev();
       });
     })();
 
-    // Logo fallback
+    // Logo fallback: if logo is too wide on very small screens, scale down
     (function(){
       const logo = document.getElementById('site-logo');
       function adjustLogo(){
