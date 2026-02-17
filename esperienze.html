@@ -1,76 +1,134 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Esperienze | BUBBLEBEE</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Esperienze autentiche in Abruzzo: cooking class, trekking, degustazioni, yoga al tramonto"/>
+  <title>Esperienze | Bubblebee Luxury B&B</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <div class="header-inner shell">
-      <a href="index.html" class="brand">
-        <img src="logo1.JPG" alt="Logo">
-        <div class="brand-text"><strong>Bubblebee</strong><span>LUXURY B&amp;B</span></div>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-logo"><img src="https://picsum.photos/id/1015/200/80" alt="Bubblebee Logo"/></div>
+        <div>Bubblebee</div>
+      </div>
+      
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="suite.html">Suite</a>
+        <a href="bubble.html">Bubble Rooms</a>
+        <a href="esperienze.html">Esperienze</a>
+        <a href="territorio.html">Territorio</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+
+      <div class="nav-toggle">
+        <a href="contatti.html" class="cta-btn">Prenota ora</a>
+        <div id="openMenu" class="hamburger">☰</div>
+      </div>
     </div>
   </header>
 
-  <nav class="nav-panel" id="navPanel">
-    <button class="close-btn" id="closeMenu">&times;</button>
+  <div id="navPanel" class="nav-panel">
+    <div style="padding:20px 24px 10px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:var(--accent);font-weight:700;">Menu</span>
+      <button id="closeMenu" style="background:none;border:none;font-size:32px;color:#fff;cursor:pointer;">×</button>
+    </div>
     <a href="index.html">Home</a>
     <a href="suite.html">Suite</a>
     <a href="bubble.html">Bubble Rooms</a>
-    <a href="esperienze.html" class="active">Esperienze</a>
+    <a href="esperienze.html">Esperienze</a>
     <a href="territorio.html">Territorio</a>
     <a href="contatti.html">Contatti</a>
-  </nav>
+  </div>
 
-  <main class="shell" style="padding-top: 60px;">
-    <div style="text-align: center; margin-bottom: 80px;">
-      <div class="section-label">Oltre il Soggiorno</div>
-      <h1 class="section-title">Rituali e <span class="accent">Scoperte</span></h1>
-    </div>
+  <main>
 
-    <section class="chapter" style="padding: 0;">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yoga">
-        </div>
-        <div class="chapter-content">
-          <span class="section-label">Wellness</span>
-          <h3>Yoga & Massaggi</h3>
-          <p>Ritrova l'equilibrio interiore con sessioni di yoga al sorgere del sole tra i filari, seguite da massaggi olistici eseguiti con oli essenziali estratti dalle erbe della nostra terra.</p>
-        </div>
+    <section class="hero shell" style="padding-top:40px; padding-bottom:20px;">
+      <div class="hero-content">
+        <div class="section-label">Vivere l’Abruzzo</div>
+        <h1>Esperienze <span class="accent">su misura</span></h1>
+        <p>Attività selezionate per immergerti completamente nella cultura, nella natura e nei sapori del territorio.</p>
       </div>
     </section>
 
-    <section class="chapter" style="padding: 0;">
-      <div class="chapter-grid">
-        <div class="chapter-image">
-          <img src="raccolta olive.jpeg" alt="Raccolta Olive">
+    <section class="shell">
+      <div class="cards-grid">
+
+        <div class="card">
+          <img src="https://picsum.photos/id/488/800/600" alt="Cooking Class"/>
+          <div class="card-body">
+            <h3>Cooking Class Abruzzese</h3>
+            <p>Impara a fare arrosticini, pasta alla chitarra e dolci tradizionali con chef locale.</p>
+            <div class="chips"><span class="chip">3 ore</span><span class="chip">Max 8 persone</span></div>
+          </div>
         </div>
-        <div class="chapter-content">
-          <span class="section-label">Tradizione</span>
-          <h3>Dalla Terra alla Tavola</h3>
-          <p>Vivi la "Giornata del Contadino": partecipa alla raccolta delle olive o alla vendemmia. Concludi con una degustazione privata dei nostri prodotti locali.</p>
+
+        <div class="card">
+          <img src="https://picsum.photos/id/669/800/600" alt="Trekking Maiella"/>
+          <div class="card-body">
+            <h3>Trekking guidato Maiella</h3>
+            <p>Escursioni di diversa difficoltà con guida naturalistica certificata.</p>
+            <div class="chips"><span class="chip">Mezza giornata / giornata intera</span><span class="chip">Livelli vari</span></div>
+          </div>
         </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/id/825/800/600" alt="Degustazione Vini"/>
+          <div class="card-body">
+            <h3>Degustazione vini & formaggi</h3>
+            <p>Montepulciano d’Abruzzo, Cerasuolo, pecorino, formaggi di fossa e miele locale.</p>
+            <div class="chips"><span class="chip">2 ore</span><span class="chip">Con sommelier</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/id/867/800/600" alt="Yoga al tramonto"/>
+          <div class="card-body">
+            <h3>Yoga & meditazione al tramonto</h3>
+            <p>Sessione privata o di gruppo con vista sulla Maiella.</p>
+            <div class="chips"><span class="chip">75 min</span><span class="chip">All'aperto</span></div>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <section class="shell contact-panel" style="margin:80px auto;max-width:900px;">
+      <div style="text-align:center;">
+        <h3>Quale esperienza vorresti vivere?</h3>
+        <p style="margin:16px 0 24px;">Possiamo organizzare tutto su misura per te.</p>
+        <a href="contatti.html" class="cta-btn">Scrivici per personalizzare</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="shell" style="display:flex; justify-content:space-between; align-items:center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05);">
-    <div style="font-weight:700">Bubblebee &middot; Luxury B&amp;B</div>
-    <div style="color:var(--muted)">&copy; <span class="year"></span></div>
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div>
+          <strong>Bubblebee Luxury B&amp;B</strong><br>
+          Tenuta Bubblebee • Sant’Eusanio del Sangro (CH)
+        </div>
+        <div>
+          <a href="suite.html">Suite</a><br>
+          <a href="bubble.html">Bubble Rooms</a><br>
+          <a href="esperienze.html">Esperienze</a>
+        </div>
+        <div>
+          <a href="territorio.html">Il Territorio</a><br>
+          <a href="contatti.html">Contatti &amp; Prenotazioni</a>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.6;">© 2026 Bubblebee Luxury B&amp;B • Tutti i diritti riservati</p>
+    </div>
   </footer>
 
-  <script>
-    document.querySelector('.year').textContent = new Date().getFullYear();
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navPanel').classList.add('open'));
-    document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('navPanel').classList.remove('open'));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
