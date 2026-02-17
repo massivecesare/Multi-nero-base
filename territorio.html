@@ -6,10 +6,26 @@
   <title>Il Territorio | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .territorio-intro { margin-bottom: 40px; line-height: 1.8; color: var(--muted); }
-    .location-feature { margin-bottom: 50px; }
-    .location-feature h3 { color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-    .distanza-badge { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,169,79,0.3); border-radius: 999px; font-size: 0.75rem; margin-bottom: 10px; color: var(--accent); }
+    .territorio-header { padding: 60px 0 40px; text-align: center; }
+    .location-section { margin-bottom: 80px; }
+    .location-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: start; }
+    
+    .location-image-wrap { position: relative; border-radius: var(--radius); overflow: hidden; }
+    .location-image-wrap img { width: 100%; display: block; filter: brightness(0.85); transition: transform 0.5s ease; }
+    .location-image-wrap:hover img { transform: scale(1.03); }
+
+    .location-info h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+    .location-info p { line-height: 1.8; color: var(--muted); margin-bottom: 20px; font-size: 1.05rem; }
+    .highlight-list { list-style: none; padding: 0; }
+    .highlight-list li { margin-bottom: 10px; padding-left: 20px; position: relative; color: var(--text); font-size: 0.9rem; }
+    .highlight-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+    .distanza { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+
+    @media(min-width: 992px) {
+      .location-grid { grid-template-columns: 1fr 1.2fr; gap: 60px; }
+      .location-section:nth-child(even) .location-image-wrap { order: 2; }
+    }
   </style>
 </head>
 <body>
@@ -35,70 +51,64 @@
   </header>
 
   <main class="shell">
-    <section>
-      <div class="section-label">Esplora i dintorni</div>
-      <h2 class="section-title">Trenta minuti di <span class="accent">incanto</span></h2>
-      
-      <div class="territorio-intro">
-        <p>Sant’Eusanio del Sangro è il punto di partenza ideale per scoprire un Abruzzo autentico. In soli 30 minuti potrete immergervi nel silenzio delle montagne o nel blu del mare Adriatico.</p>
-      </div>
+    <div class="territorio-header">
+      <div class="section-label">Orizzonti Abruzzesi</div>
+      <h2 class="section-title">Tra la <span class="accent">Maiella</span> e il <span class="accent">Mare</span></h2>
+      <p style="color:var(--muted); max-width:700px; margin: 20px auto;">Situata nel cuore di Sant'Eusanio del Sangro, la tenuta Bubblebee è il baricentro perfetto per esplorare le eccellenze d'Abruzzo: un viaggio che in meno di 30 minuti vi porta dalle vette appenniniche alla costa più selvaggia dell'Adriatico.</p>
+    </div>
 
-      <div class="location-feature">
-        <div class="distanza-badge">20 min di auto</div>
-        <h3>La Majella: Natura Selvaggia</h3>
-        <div class="cards-grid">
-          <div class="card">
-            <img src="gole san martino.webp" alt="Gole di San Martino">
-            <div style="font-weight:700; margin:10px 0 5px;">Le Gole di San Martino</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Uno stretto passaggio tra rocce altissime che apre le porte ai sentieri più belli della Maiella.</p>
-          </div>
-          <div class="card">
-            <img src="https://images.pexels.com/photos/1031698/pexels-photo-1031698.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sorgenti del Verde">
-            <div style="font-weight:700; margin:10px 0 5px;">Sorgenti del Verde</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Acque cristalline e fresche che sgorgano dalle viscere della montagna a Fara San Martino.</p>
-          </div>
+    <section class="location-section">
+      <div class="location-grid">
+        <div class="location-image-wrap">
+          <img src="https://images.pexels.com/photos/1133503/pexels-photo-1133503.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Maiella Abruzzo">
+        </div>
+        <div class="location-info">
+          <span class="distanza">20 Minuti · Montagna</span>
+          <h3>La Montagna Madre</h3>
+          <p>La Maiella non è solo una catena montuosa, è lo spirito dell'Abruzzo. Da Sant'Eusanio, lo sguardo si poggia quotidianamente sulle sue cime imponenti. Le Gole di San Martino a Fara San Martino rappresentano una delle esperienze più scenografiche: una fenditura strettissima nella roccia che si apre su vallate incontaminate, dove il silenzio è interrotto solo dallo scorrere del Fiume Verde.</p>
+          <ul class="highlight-list">
+            <li><strong>Sorgenti del Verde:</strong> Acque purissime ideali per una sosta rigenerante dopo il trekking.</li>
+            <li><strong>Eremo di Santo Spirito:</strong> Un gioiello incastonato nella pietra, luogo di pace assoluta.</li>
+            <li><strong>Pasta di Fara:</strong> Visita ai pastifici storici famosi in tutto il mondo.</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="location-feature">
-        <div class="distanza-badge">25 min di auto</div>
-        <h3>La Costa dei Trabocchi</h3>
-        <div class="cards-grid">
-          <div class="card">
-            <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
-            <div style="font-weight:700; margin:10px 0 5px;">I Trabocchi</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Piattaforme da pesca in legno, oggi simboli della nostra costa e luoghi di alta gastronomia.</p>
-          </div>
-          <div class="card">
-            <img src="https://images.pexels.com/photos/1632361/pexels-photo-1632361.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Punta Aderci">
-            <div style="font-weight:700; margin:10px 0 5px;">Riserva di Punta Aderci</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Scogliere a picco e spiagge selvagge dove il mare si tinge di colori caraibici.</p>
-          </div>
+    <section class="location-section">
+      <div class="location-grid">
+        <div class="location-image-wrap">
+          <img src="https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Costa dei Trabocchi">
+        </div>
+        <div class="location-info">
+          <span class="distanza">25 Minuti · Mare</span>
+          <h3>L'Adriatico Selvaggio</h3>
+          <p>La Costa dei Trabocchi è un litorale unico al mondo, caratterizzato dalle antiche palafitte da pesca che sembrano "ragni colossali" sospesi sull'acqua. In soli 25 minuti potrete raggiungere la Riserva di Punta Aderci, dove le scogliere si tuffano in un mare cristallino che nulla ha da invidiare ai tropici. La "Via Verde", la nuova pista ciclabile ricavata dal vecchio tracciato ferroviario, offre chilometri di pura bellezza a picco sul mare.</p>
+          <ul class="highlight-list">
+            <li><strong>Cena sul Trabocco:</strong> Un'esperienza gastronomica gourmet sospesi sopra le onde.</li>
+            <li><strong>Punta Aderci:</strong> Il miglior punto per lo snorkeling e il birdwatching.</li>
+            <li><strong>Via Verde:</strong> Perfetta per un tour in E-bike al tramonto.</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="location-feature">
-        <div class="distanza-badge">15-20 min di auto</div>
-        <h3>Storia e Architettura</h3>
-        <div class="cards-grid">
-          <div class="card">
-            <img src="[attachment_2](attachment)" alt="Abbazia San Giovanni in Venere">
-            <div style="font-weight:700; margin:10px 0 5px;">San Giovanni in Venere</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Un'abbazia millenaria che domina il mare, un luogo di quiete e bellezza architettonica unica.</p>
-          </div>
-          <div class="card">
-            <img src="[attachment_0](attachment)" alt="Castello di Roccascalegna">
-            <div style="font-weight:700; margin:10px 0 5px;">Castello di Roccascalegna</div>
-            <p style="font-size:0.85rem; color:var(--muted);">La fortezza nel cielo, arroccata su uno sperone roccioso che sovrasta la vallata.</p>
-          </div>
-          <div class="card">
-            <img src="[attachment_1](attachment)" alt="Centro Storico Lanciano">
-            <div style="font-weight:700; margin:10px 0 5px;">Lanciano Medievale</div>
-            <p style="font-size:0.85rem; color:var(--muted);">Città del Miracolo Eucaristico, ricca di storia, quartieri medievali e vita cittadina.</p>
-          </div>
+    <section class="location-section">
+      <div class="location-grid">
+        <div class="location-image-wrap">
+          <img src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Borghi Abruzzesi">
+        </div>
+        <div class="location-info">
+          <span class="distanza">15 Minuti · Storia</span>
+          <h3>Castelli e Abbazie</h3>
+          <p>Il nostro entroterra è costellato di meraviglie architettoniche. L'Abbazia di San Giovanni in Venere domina il golfo di Fossacesia offrendo una vista che toglie il fiato. Poco distante, il Castello di Roccascalegna svetta fiero su uno sperone di roccia, raccontando storie di cavalieri e leggende medievali. Lanciano, città d'arte e del Miracolo Eucaristico, vi accoglierà con le sue botteghe e i quartieri storici perfettamente conservati.</p>
+          <ul class="highlight-list">
+            <li><strong>Roccascalegna:</strong> Il castello più iconico e fotografato della regione.</li>
+            <li><strong>San Giovanni in Venere:</strong> Un chiostro romanico di rara bellezza tra gli ulivi.</li>
+            <li><strong>Lanciano:</strong> Shopping, storia e tradizioni millenarie.</li>
+          </ul>
         </div>
       </div>
-
     </section>
   </main>
 
