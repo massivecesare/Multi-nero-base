@@ -129,9 +129,6 @@ footer{margin-top:26px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03
   .hero-title{font-size:2.6rem}
   .carousel{height:420px}
 }
-/* desktop-override.css
-   Regole per desktop: applicare solo su larghezze >= 1024px
-   Incollare alla fine del CSS esistente per forzare override */
 @media (min-width: 1024px) {
 
   :root{
