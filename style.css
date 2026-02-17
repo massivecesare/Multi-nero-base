@@ -7,82 +7,86 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* HEADER A 3 COLONNE (LOGO | HOME | MENU) */
+/* HEADER & HAMBURGER ORO */
 header {
-  background: rgba(13, 9, 3, 0.98);
+  background: rgba(13, 9, 3, 0.95);
   backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0; z-index: 1000;
-  border-bottom: 1px solid rgba(212, 169, 79, 0.2);
+  position: sticky; top: 0; z-index: 1000;
+  border-bottom: 1px solid rgba(212, 169, 79, 0.1);
 }
+.header-inner { height: 80px; display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text); }
+.brand img { height: 45px; }
+.brand-text strong { display: block; letter-spacing: 0.12em; line-height: 1; }
+.brand-text span { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.18em; }
 
-.header-inner {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-col-left { flex: 1; display: flex; align-items: center; }
-.header-col-center { flex: 1; display: flex; justify-content: center; }
-.header-col-right { flex: 1; display: flex; justify-content: flex-end; }
-
-.brand-img { height: 45px; border-radius: 4px; }
-
-.btn-home-center {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 8px 16px;
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  transition: 0.3s;
-}
-.btn-home-center:hover { background: var(--accent); color: #000; }
-
-/* HAMBURGER ORO PIENO */
 .hamburger {
-  background: var(--accent);
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+  background: var(--accent); /* ORO PIENO */
+  border: none; width: 45px; height: 45px; border-radius: 8px; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s ease;
 }
-.hamburger span { width: 25px; height: 3px; background: #000; border-radius: 2px; }
+.hamburger:active { transform: scale(0.95); }
+.hamburger span { width: 25px; height: 3px; background: #000; border-radius: 2px; } /* LINEE NERE */
 
 /* MENU LATERALE */
 .nav-panel {
-  position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
-  background: var(--bg); z-index: 2000; transition: 0.4s ease;
-  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px;
+  position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--bg);
+  z-index: 2000; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
 }
 .nav-panel.open { right: 0; }
-.nav-panel a { color: var(--text); font-size: 1.8rem; text-decoration: none; font-weight: 700; text-transform: uppercase; }
-.nav-panel a:hover { color: var(--accent); }
-.close-btn { position: absolute; top: 20px; right: 20px; font-size: 3rem; color: var(--accent); background: none; border: none; cursor: pointer; }
+.nav-panel a { color: var(--text); font-size: 1.8rem; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;}
+.nav-panel a:hover, .nav-panel a.active { color: var(--accent); }
+.close-btn { position: absolute; top: 25px; right: 25px; font-size: 3rem; color: var(--accent); background: none; border: none; cursor: pointer; }
 
-/* SEZIONI E CARD */
-.section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
-.section-title { font-size: 2.2rem; margin-bottom: 40px; }
+/* BOTTONI */
+.btn-primary { display: inline-block; background: var(--accent); color: #000; padding: 12px 28px; border-radius: 999px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { display: inline-block; margin-top: 20px; padding: 10px 24px; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 0.85rem; transition: 0.3s; text-transform: uppercase; text-decoration: none; }
+.btn-outline:hover { background: var(--accent); color: #000; }
+
+/* HOME - CAROUSEL HERO */
+.hero { position: relative; height: calc(100vh - 80px); display: flex; align-items: center; overflow: hidden; }
+.hero-left { position: relative; z-index: 10; width: 100%; max-width: 600px; padding: 0 20px; margin-left: auto; margin-right: auto; }
+@media(min-width: 768px){ .hero-left { margin-left: 10%; margin-right: 0; } }
+.hero-badge { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; }
+.hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+.hero-sub { font-size: 1.1rem; color: #ccc; margin-bottom: 30px; line-height: 1.8; }
+.carousel { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.carousel .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; background-size: cover; background-position: center; filter: brightness(0.6); }
+.carousel .slide.active { opacity: 1; }
+.carousel .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, rgba(13,9,3,0) 100%); opacity: 0.8; }
+.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; z-index: 10; }
+.nav-btn.left { left: 20px; } .nav-btn.right { right: 20px; }
+
+/* SEZIONI E CARD STANDARD */
+section { padding: 80px 0; }
+.section-label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; display: block; }
+.section-title { font-size: 2.5rem; margin-bottom: 40px; line-height: 1.2; }
 .accent { color: var(--accent); }
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.card { background: #16110a; border-radius: var(--radius); overflow: hidden; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card { background: #16110a; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
 .card img { width: 100%; height: 250px; object-fit: cover; }
-.card-body { padding: 25px; }
+.card h3 { padding: 20px 20px 5px; color: var(--accent); }
+.card p { padding: 0 20px 20px; color: var(--muted); }
 
-@media (max-width: 600px) {
-  .btn-home-center { font-size: 0.6rem; padding: 6px 12px; }
-  .section-title { font-size: 1.8rem; }
+/* LAYOUT PAGINA TERRITORIO E ESPERIENZE */
+.chapter { margin-bottom: 80px; }
+.chapter-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+.chapter-number { font-family: serif; font-style: italic; color: var(--accent); font-size: 1.2rem; display: block; margin-bottom: 10px; }
+.chapter-content h3 { font-size: 2rem; margin-bottom: 20px; line-height: 1.2; }
+.chapter-content p { color: var(--muted); margin-bottom: 20px; line-height: 1.8; }
+.chapter-image img { width: 100%; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.quote { border-left: 2px solid var(--accent); padding-left: 20px; margin: 30px 0; font-style: italic; }
+
+@media(min-width: 992px) {
+  .chapter-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .chapter:nth-child(even) .chapter-image { order: 2; }
+  .brand-text { display: block; }
+}
+@media(max-width: 768px) {
+  .brand-text { display: none; }
 }
