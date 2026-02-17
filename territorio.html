@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Il Territorio | BUBBLEBEE</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .territorio-intro { margin-bottom: 40px; line-height: 1.8; color: var(--muted); }
+    .location-feature { margin-bottom: 50px; }
+    .location-feature h3 { color: var(--accent); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .distanza-badge { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,169,79,0.3); border-radius: 999px; font-size: 0.75rem; margin-bottom: 10px; color: var(--accent); }
+  </style>
 </head>
 <body>
   <header>
@@ -29,23 +35,70 @@
   </header>
 
   <main class="shell">
-    <section id="territorio">
-      <div class="section-label">Il territorio</div>
-      <h2 class="section-title">A 30 minuti <span class="accent">dalla meraviglia</span></h2>
-      <p style="color:var(--muted); margin-bottom: 20px;">Dalle vette della Maiella alle acque cristalline dell'Adriatico.</p>
+    <section>
+      <div class="section-label">Esplora i dintorni</div>
+      <h2 class="section-title">Trenta minuti di <span class="accent">incanto</span></h2>
       
-      <div class="cards-grid">
-        <article class="card">
-          <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
-          <div style="font-weight:700; font-size:1.2rem;">Costa dei Trabocchi</div>
-          <div style="color:var(--muted); margin-top:6px">Antichi trabocchi e ristoranti sul mare.</div>
-        </article>
-        <article class="card">
-          <img src="gole san martino.webp" alt="Gole di San Martino">
-          <div style="font-weight:700; font-size:1.2rem;">Gole di San Martino</div>
-          <div style="color:var(--muted); margin-top:6px">Sentieri e canyon alle porte della Maiella.</div>
-        </article>
+      <div class="territorio-intro">
+        <p>Sant’Eusanio del Sangro è il punto di partenza ideale per scoprire un Abruzzo autentico. In soli 30 minuti potrete immergervi nel silenzio delle montagne o nel blu del mare Adriatico.</p>
       </div>
+
+      <div class="location-feature">
+        <div class="distanza-badge">20 min di auto</div>
+        <h3>La Majella: Natura Selvaggia</h3>
+        <div class="cards-grid">
+          <div class="card">
+            <img src="gole san martino.webp" alt="Gole di San Martino">
+            <div style="font-weight:700; margin:10px 0 5px;">Le Gole di San Martino</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Uno stretto passaggio tra rocce altissime che apre le porte ai sentieri più belli della Maiella.</p>
+          </div>
+          <div class="card">
+            <img src="https://images.pexels.com/photos/1031698/pexels-photo-1031698.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sorgenti del Verde">
+            <div style="font-weight:700; margin:10px 0 5px;">Sorgenti del Verde</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Acque cristalline e fresche che sgorgano dalle viscere della montagna a Fara San Martino.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-feature">
+        <div class="distanza-badge">25 min di auto</div>
+        <h3>La Costa dei Trabocchi</h3>
+        <div class="cards-grid">
+          <div class="card">
+            <img src="costa dei trabocchi 2.webp" alt="Costa dei Trabocchi">
+            <div style="font-weight:700; margin:10px 0 5px;">I Trabocchi</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Piattaforme da pesca in legno, oggi simboli della nostra costa e luoghi di alta gastronomia.</p>
+          </div>
+          <div class="card">
+            <img src="https://images.pexels.com/photos/1632361/pexels-photo-1632361.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Punta Aderci">
+            <div style="font-weight:700; margin:10px 0 5px;">Riserva di Punta Aderci</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Scogliere a picco e spiagge selvagge dove il mare si tinge di colori caraibici.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-feature">
+        <div class="distanza-badge">15-20 min di auto</div>
+        <h3>Storia e Architettura</h3>
+        <div class="cards-grid">
+          <div class="card">
+            <img src="[attachment_2](attachment)" alt="Abbazia San Giovanni in Venere">
+            <div style="font-weight:700; margin:10px 0 5px;">San Giovanni in Venere</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Un'abbazia millenaria che domina il mare, un luogo di quiete e bellezza architettonica unica.</p>
+          </div>
+          <div class="card">
+            <img src="[attachment_0](attachment)" alt="Castello di Roccascalegna">
+            <div style="font-weight:700; margin:10px 0 5px;">Castello di Roccascalegna</div>
+            <p style="font-size:0.85rem; color:var(--muted);">La fortezza nel cielo, arroccata su uno sperone roccioso che sovrasta la vallata.</p>
+          </div>
+          <div class="card">
+            <img src="[attachment_1](attachment)" alt="Centro Storico Lanciano">
+            <div style="font-weight:700; margin:10px 0 5px;">Lanciano Medievale</div>
+            <p style="font-size:0.85rem; color:var(--muted);">Città del Miracolo Eucaristico, ricca di storia, quartieri medievali e vita cittadina.</p>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
